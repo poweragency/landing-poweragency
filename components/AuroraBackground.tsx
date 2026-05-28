@@ -86,8 +86,9 @@ const fragmentShader = /* glsl */ `
     float vig = smoothstep(1.35, 0.35, length(uv - 0.5));
     col *= mix(0.65, 1.0, vig);
 
-    float g = hash(uv * uRes + t) * 0.035;
-    col += g - 0.017;
+    // static dithering (no time term) — prevents banding without per-frame flicker
+    float g = hash(floor(gl_FragCoord.xy)) * 0.03;
+    col += g - 0.015;
 
     gl_FragColor = vec4(col, 1.0);
   }
