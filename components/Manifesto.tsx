@@ -10,7 +10,7 @@ export default function Manifesto() {
     <section id="metodo" className="scroll-mt-24 px-6 py-24 md:py-28">
       <div className="mx-auto max-w-[1180px]">
         <SectionHead
-          kicker="Il metodo"
+          kicker="La nostra mission"
           title={
             <>
               Non vendiamo teoria.

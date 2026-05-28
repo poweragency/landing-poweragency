@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
-  { href: "#prodotti", label: "Prodotti" },
-  { href: "#metodo", label: "Metodo" },
-  { href: "#casi", label: "Case study" },
-  { href: "#team", label: "Team" },
+  { href: "/", label: "Home" },
+  { href: "/software", label: "Software" },
+  { href: "/crm", label: "CRM" },
+  { href: "/#team", label: "Team" },
 ] as const;
 
 export const STATS = [
@@ -30,60 +30,139 @@ export const FEATURES = [
   },
 ] as const;
 
-export type Product = {
+/* ============================================================
+   SOFTWARE PROPRIETARI — pagina /software
+   ============================================================ */
+export type SoftwareStatus = "live" | "soon";
+
+export type Software = {
+  slug: string;
   index: string;
+  name: string;
   tag: string;
-  tagStyle?: "default" | "saas" | "soon";
-  title: string;
-  text: string;
-  bullets?: string[];
-  cta: string;
-  arrow?: string;
-  featured?: boolean;
+  status: SoftwareStatus;
+  icon: string;
+  headline: string;
+  description: string;
+  features: string[];
+  audience?: string;
+  pricing?: string;
+  url?: string;
+  ctaLabel: string;
 };
 
-export const PRODUCTS: Product[] = [
+export const SOFTWARE: Software[] = [
   {
+    slug: "powerleads",
     index: "01",
-    tag: "Sistema completo",
-    title: "Il pacchetto",
-    text: "Sito, lead generation e CRM in un sistema unico AI-powered. L'asset completo per trasformare il traffico in clienti che chiudi.",
-    bullets: ["Sito che converte, non solo bello", "Lead gen automatizzata", "CRM con follow-up AI"],
-    cta: "Esplora",
-    featured: true,
+    name: "PowerLeads",
+    tag: "SaaS · Lead Generation",
+    status: "live",
+    icon: "🧲",
+    headline: "Un sistema. Non cinque tool.",
+    description:
+      "Piattaforma all-in-one che automatizza l'acquisizione clienti: estrae lead da Instagram e Google Maps, genera icebreaker personalizzati con AI e invia DM ed email in automatico. Una sola dashboard, un solo abbonamento — al posto di 3-5 strumenti separati da 200-400€/mese.",
+    features: [
+      "Estrazione lead da profili Instagram e ricerche Google Maps",
+      "Icebreaker su misura generati con Anthropic Claude",
+      "Outreach automatico: DM via estensione Chrome ed email dal tuo dominio",
+      "Setup in 5 minuti, senza competenze tecniche",
+      "Dati freschi ad ogni ricerca, mai database obsoleti",
+    ],
+    audience:
+      "Coach, creator, freelancer, e-commerce · Agenzie, studi professionali, SaaS, consulenza, real estate",
+    pricing: "Da 49€/mese · 7 giorni di prova gratis con 500 crediti inclusi",
+    url: "https://powerleads.poweragency.it",
+    ctaLabel: "Vai a PowerLeads",
   },
   {
+    slug: "powerreel",
     index: "02",
-    tag: "Verticale",
-    title: "Le carrozzerie",
-    text: "Verticalizzazione per settore: preventivi, pratiche e lavorazioni gestite dall'AI. Già testato sul campo con numeri reali.",
-    cta: "Vedi il verticale",
-  },
-  {
-    index: "03",
-    tag: "Enterprise",
-    title: "Progetti enterprise",
-    text: "Stack custom e integrazioni profonde per chi ha già volumi. Architettura su misura, AI dove serve davvero.",
-    cta: "Parliamone",
-  },
-  {
-    index: "04",
-    tag: "SaaS",
-    tagStyle: "saas",
-    title: "PowerLeads",
-    text: "Estrazione lead e outreach AI automatico. Trova i contatti giusti e li contatta per te, su scala.",
-    cta: "Vai al SaaS",
-    arrow: "↗",
-  },
-  {
-    index: "05",
+    name: "PowerReel",
     tag: "In arrivo",
-    tagStyle: "soon",
-    title: "PowerReel",
-    text: "Gestione contenuti social automatizzata. Dalla creazione alla pubblicazione, il tuo flusso content guidato dall'AI.",
-    cta: "Resta aggiornato",
+    status: "soon",
+    icon: "🎬",
+    headline: "Sezione in arrivo.",
+    description:
+      "Stiamo costruendo PowerReel. Questa sezione è da compilare: feature, descrizione e dettagli arrivano a breve.",
+    features: [],
+    ctaLabel: "Resta aggiornato",
+  },
+  {
+    slug: "powerlanding",
+    index: "03",
+    name: "PowerLanding",
+    tag: "Servizio · Siti web",
+    status: "live",
+    icon: "🚀",
+    headline: "Sito su misura in 48 ore.",
+    description:
+      "Sito completamente personalizzato, disegnato e scritto a mano — nessun template. Copy strategico che converte, codice artigianale, hosting e dominio inclusi. Consegna garantita in 48 ore dal pagamento.",
+    features: [
+      "Sviluppo 100% personalizzato, nessun template o preset",
+      "Codice scritto a mano, riga per riga",
+      "Copy strategico studiato per convertire",
+      "Hosting e dominio inclusi nel prezzo",
+      "Codice sorgente e repository ceduti a te, per sempre",
+      "Massimo 30 progetti al mese per qualità controllata",
+    ],
+    audience:
+      "Piccole imprese e professionisti — dentisti, avvocati, personal trainer, studi — che vogliono un sito credibile senza spendere migliaia di euro.",
+    pricing: "Da 397€ · 3 livelli: Standard, Premium, Signature",
+    url: "https://powersite.vercel.app",
+    ctaLabel: "Scopri PowerLanding",
   },
 ];
+
+/* ============================================================
+   CRM CARROZZERIE — pagina /crm
+   ============================================================ */
+export const CRM = {
+  name: "CRM Carrozzerie",
+  tag: "Verticale · Officine & Carrozzerie",
+  headline: "Gestione lead & pratiche, in un unico flusso.",
+  description:
+    "Il gestionale verticale per carrozzerie: dal primo contatto del cliente alla pratica chiusa. Lead, preventivi, lavorazioni e follow-up in un'unica pipeline — con l'AI che lavora i contatti al posto tuo.",
+  url: "https://crm-carrozzerie.vercel.app",
+  modules: [
+    {
+      icon: "📥",
+      title: "Gestione lead",
+      text: "Ogni richiesta entra, viene qualificata e assegnata. Niente contatti persi tra WhatsApp, telefono e mail.",
+    },
+    {
+      icon: "📋",
+      title: "Pratiche & preventivi",
+      text: "Dalla stima al consuntivo: storico completo di ogni pratica, documenti e stato di avanzamento sempre allineati.",
+    },
+    {
+      icon: "🔧",
+      title: "Pipeline lavorazioni",
+      text: "Lo stato di ogni veicolo a colpo d'occhio: in attesa, in lavorazione, pronto, consegnato.",
+    },
+    {
+      icon: "🤖",
+      title: "Follow-up AI",
+      text: "I preventivi non chiusi vengono ricontattati in automatico. L'AI scrive e insiste al posto tuo, con il tono giusto.",
+    },
+    {
+      icon: "🔗",
+      title: "Lead gen integrata",
+      text: "I contatti che arrivano dalle ads entrano già dentro al CRM, pronti da lavorare. Zero copia-incolla.",
+    },
+    {
+      icon: "📊",
+      title: "Numeri reali",
+      text: "Conversioni, tempi di chiusura e fatturato per periodo. Sai sempre cosa funziona e cosa no.",
+    },
+  ],
+  workflow: [
+    { step: "01", title: "Arriva il lead", text: "Dalle ads, dal sito o da Google: ogni richiesta entra nel CRM." },
+    { step: "02", title: "Qualifica e preventivo", text: "Il contatto viene qualificato e riceve un preventivo tracciato." },
+    { step: "03", title: "Follow-up automatico", text: "Se non risponde, l'AI lo ricontatta finché non chiude o dice no." },
+    { step: "04", title: "Lavorazione e consegna", text: "Pratica in officina, stato aggiornato, cliente sempre informato." },
+  ],
+} as const;
 
 export const CASE_METRICS = [
   { value: 60, suffix: "+", label: "lead in 2 settimane" },
@@ -91,13 +170,26 @@ export const CASE_METRICS = [
   { value: 15000, suffix: "€", label: "fatturato generato" },
 ] as const;
 
-export const TEAM = [
+/* ============================================================
+   TEAM — fondatori + sales team (card)
+   ============================================================ */
+export type Person = {
+  initials: string;
+  name: string;
+  role: string;
+};
+
+export const TEAM: Person[] = [
   { initials: "VA", name: "Vincenzo Amore", role: "Commerciale & strategia" },
   { initials: "MA", name: "Mattia", role: "Tecnico · AI · sviluppo" },
   { initials: "WA", name: "Wassim", role: "Vertical prop firms" },
-] as const;
+];
 
-export const SALES = ["Gabriele", "Giorgio", "William"] as const;
+export const SALES: Person[] = [
+  { initials: "GA", name: "Gabriele", role: "Sales · Closer" },
+  { initials: "GI", name: "Giorgio", role: "Sales · Closer" },
+  { initials: "WI", name: "William", role: "Sales · Closer" },
+];
 
 export const CONTACT = {
   email: "info@poweragency.it",

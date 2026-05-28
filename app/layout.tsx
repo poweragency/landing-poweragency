@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Background from "@/components/Background";
+import CustomCursor from "@/components/CustomCursor";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +20,10 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "PowerAgency — Sistemi AI per chi vuole risultati reali",
+  title: {
+    default: "PowerAgency — Sistemi AI per chi vuole risultati reali",
+    template: "%s — PowerAgency",
+  },
   description:
     "Costruiamo asset che generano clienti. Sito, lead generation e CRM in un unico sistema AI-powered. Se non funziona sul nostro business, non lo portiamo fuori.",
   openGraph: {
@@ -37,7 +44,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="it" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Background />
+        <CustomCursor />
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

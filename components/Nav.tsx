@@ -1,13 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { NAV_LINKS } from "@/lib/content";
 import { EASE } from "@/lib/motion";
 import MagneticButton from "./MagneticButton";
 import Logo from "./Logo";
 
+function isActive(href: string, pathname: string) {
+  if (href === "/") return pathname === "/";
+  // strip hash for comparison (e.g. "/#team" → "/")
+  const base = href.split("#")[0];
+  if (base === "/" || base === "") return false;
+  return pathname === base || pathname.startsWith(`${base}/`);
+}
+
 export default function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -37,22 +48,32 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between gap-6 px-6">
-        <a href="#top" aria-label="PowerAgency home" data-cursor="hover">
+        <Link href="/" aria-label="PowerAgency home" data-cursor="hover">
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Navigazione principale">
-          {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              data-cursor="hover"
-              className="group relative text-[0.95rem] font-medium text-mut transition-colors hover:text-ink"
-            >
-              {l.label}
-              <span className="absolute -bottom-1.5 left-0 h-0.5 w-0 rounded bg-gradient-to-r from-amber to-red transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {NAV_LINKS.map((l) => {
+            const active = isActive(l.href, pathname);
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                data-cursor="hover"
+                aria-current={active ? "page" : undefined}
+                className={`group relative text-[0.95rem] font-medium transition-colors hover:text-ink ${
+                  active ? "text-ink" : "text-mut"
+                }`}
+              >
+                {l.label}
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-0.5 rounded bg-gradient-to-r from-amber to-red transition-all duration-300 ${
+                    active ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden md:block">
@@ -99,14 +120,16 @@ export default function Nav() {
           >
             <div className="flex flex-col gap-1 px-6 pb-6 pt-2">
               {NAV_LINKS.map((l) => (
-                <a
+                <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-line py-3 font-medium text-mut"
+                  className={`border-b border-line py-3 font-medium ${
+                    isActive(l.href, pathname) ? "text-ink" : "text-mut"
+                  }`}
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
               <a
                 href="#contatti"

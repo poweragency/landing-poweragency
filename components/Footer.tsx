@@ -1,12 +1,12 @@
+import Link from "next/link";
 import { CONTACT } from "@/lib/content";
 import Logo from "./Logo";
 
 const PRODUCT_LINKS = [
-  "Il pacchetto",
-  "Le carrozzerie",
-  "Enterprise",
-  "PowerLeads",
-  "PowerReel",
+  { label: "PowerLeads", href: "/software#powerleads" },
+  { label: "PowerReel", href: "/software#powerreel" },
+  { label: "PowerLanding", href: "/software#powerlanding" },
+  { label: "CRM Carrozzerie", href: "/crm" },
 ];
 
 export default function Footer() {
@@ -30,13 +30,13 @@ export default function Footer() {
               Prodotti
             </h4>
             {PRODUCT_LINKS.map((p) => (
-              <a
-                key={p}
-                href="#prodotti"
+              <Link
+                key={p.label}
+                href={p.href}
                 className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
               >
-                {p}
-              </a>
+                {p.label}
+              </Link>
             ))}
           </div>
 
