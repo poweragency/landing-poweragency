@@ -114,9 +114,6 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
             </p>
 
             <div className="mt-9 flex flex-col items-center gap-4">
-              <span className="font-head text-[0.74rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Chi guida il verticale
-              </span>
               <div className="flex items-center gap-4">
                 <div className="relative grid h-[60px] w-[60px] place-items-center rounded-full">
                   <span className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full [background:conic-gradient(from_140deg,#ffb347,#ff2d2d,#c4161c,#ffb347)]" />
