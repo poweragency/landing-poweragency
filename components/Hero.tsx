@@ -56,7 +56,7 @@ export default function Hero() {
           className="mx-auto mt-7 w-full max-w-[62ch] text-[clamp(1.02rem,1.6vw,1.22rem)] leading-relaxed text-mut"
         >
           Costruiamo asset che generano clienti. Sito, lead generation e CRM in un
-          unico sistema AI-powered. Non un&apos;agenzia: un trio che fa palestra
+          unico sistema AI-powered. Non un&apos;agenzia: un team che fa palestra
           ogni giorno sul proprio business.
         </motion.p>
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PowerAgency — Sistemi AI per chi vuole risultati reali",
     description:
-      "Costruiamo asset che generano clienti. Non un'agenzia: un trio che fa palestra ogni giorno sul proprio business.",
+      "Costruiamo asset che generano clienti. Non un'agenzia: un team che fa palestra ogni giorno sul proprio business.",
     type: "website",
     locale: "it_IT",
   },

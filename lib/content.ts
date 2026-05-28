@@ -26,8 +26,8 @@ export const FEATURES = [
   },
   {
     icon: "🔥",
-    title: "Trio che fa palestra",
-    text: "Strategia, tecnica e verticali: tre persone che si allenano ogni giorno sul proprio business. Risultati, non slide.",
+    title: "Team che fa palestra",
+    text: "Strategia, tecnica e verticali: un team che si allena ogni giorno sul proprio business. Risultati, non slide.",
   },
 ] as const;
 
