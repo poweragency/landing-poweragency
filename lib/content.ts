@@ -12,14 +12,13 @@ export type Stat = {
   suffix?: string;
   display?: string;
   label: string;
-  kicker?: string;
 };
 
 export const STATS: Stat[] = [
   { value: 10000, prefix: "", suffix: "€", display: "/day", label: "Ecommerce gestito ogni giorno" },
   { value: 120, prefix: "", suffix: "+", display: "", label: "Account prop operativi ogni giorno" },
   { value: 60, prefix: "", suffix: "+", display: "", label: "Lead generati in due settimane per una carrozzeria" },
-  { value: 1000, prefix: "", suffix: "", display: "", label: "generati in un solo giorno", kicker: "Lead" },
+  { value: 1000, prefix: "", suffix: " lead", display: "", label: "generati in un solo giorno" },
 ];
 
 export const FEATURES = [
