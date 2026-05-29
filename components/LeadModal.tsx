@@ -24,7 +24,7 @@ type Status = "idle" | "loading" | "success" | "error";
 const SECTORS = [
   { value: "", label: "Da definire" },
   { value: "software", label: "Software proprietari" },
-  { value: "crm", label: "CRM carrozzerie" },
+  { value: "crm", label: "CRM" },
   { value: "prop", label: "Prop firms" },
   { value: "ecommerce", label: "Ecommerce" },
 ];

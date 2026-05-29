@@ -80,7 +80,6 @@ export const SOFTWARE: Software[] = [
     ],
     audience:
       "Coach, creator, freelancer ed e-commerce · Agenzie, studi professionali, SaaS, consulenza e real estate",
-    pricing: "Da 49€/mese · 7 giorni di prova gratuita, 500 crediti inclusi",
     url: "https://powerleads.poweragency.it",
     ctaLabel: "Vai a PowerLeads",
   },
@@ -117,7 +116,6 @@ export const SOFTWARE: Software[] = [
     ],
     audience:
       "Professionisti e piccole imprese — dentisti, avvocati, personal trainer, studi — che vogliono un sito credibile senza spendere migliaia di euro.",
-    pricing: "Da 397€ · 3 livelli: Standard, Premium, Signature",
     url: "https://powersite.vercel.app",
     ctaLabel: "Scopri PowerLanding",
   },
@@ -127,11 +125,11 @@ export const SOFTWARE: Software[] = [
    CRM CARROZZERIE — pagina /crm
    ============================================================ */
 export const CRM = {
-  name: "CRM Carrozzerie",
-  tag: "Verticale · Officine & Carrozzerie",
-  headline: "Lead e pratiche, in un unico flusso.",
+  name: "CRM su misura",
+  tag: "Verticale · CRM su misura",
+  headline: "Un CRM cucito sul tuo settore.",
   description:
-    "Il gestionale verticale per carrozzerie: dal primo contatto alla pratica chiusa. Lead, preventivi, lavorazioni e follow-up in un'unica pipeline, con l'AI che lavora i contatti al posto tuo.",
+    "Costruiamo CRM verticali, modellati sul flusso reale di un settore: lead, preventivi, lavorazioni e follow-up in un'unica pipeline, con l'AI che lavora i contatti al posto tuo. Il primo è dedicato alle carrozzerie; altri verticali sono in arrivo.",
   url: "https://crm-carrozzerie.vercel.app",
   modules: [
     {
@@ -147,7 +145,7 @@ export const CRM = {
     {
       icon: "wrench",
       title: "Pipeline lavorazioni",
-      text: "Lo stato di ogni veicolo a colpo d'occhio: in attesa, in lavorazione, pronto, consegnato.",
+      text: "Lo stato di ogni lavoro a colpo d'occhio: in attesa, in lavorazione, pronto, consegnato.",
     },
     {
       icon: "bot",
@@ -169,7 +167,7 @@ export const CRM = {
     { step: "01", title: "Arriva il lead", text: "Dalle ads, dal sito o da Google: ogni richiesta entra nel CRM." },
     { step: "02", title: "Qualifica e preventivo", text: "Il contatto viene qualificato e riceve un preventivo tracciato." },
     { step: "03", title: "Follow-up automatico", text: "Se non risponde, l'AI lo ricontatta finché non chiude o dice no." },
-    { step: "04", title: "Lavorazione e consegna", text: "Pratica in officina, stato aggiornato, cliente sempre informato." },
+    { step: "04", title: "Lavorazione e consegna", text: "Lavoro in corso, stato aggiornato, cliente sempre informato." },
   ],
 } as const;
 

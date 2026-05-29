@@ -7,9 +7,9 @@ import MagneticButton from "@/components/MagneticButton";
 import { CRM } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "CRM Carrozzerie",
+  title: "CRM",
   description:
-    "Il gestionale verticale per carrozzerie: lead, preventivi, pratiche e lavorazioni in un'unica pipeline, con follow-up automatici guidati dall'AI.",
+    "CRM verticali su misura: lead, preventivi, pratiche e lavorazioni in un'unica pipeline, con follow-up automatici guidati dall'AI. Il primo verticale è per le carrozzerie.",
 };
 
 export default function CrmPage() {
@@ -33,10 +33,10 @@ export default function CrmPage() {
 
       <div className="pt-8">
         <CTA
-          kicker="Ordine nella tua officina"
-          title="Vuoi questo CRM nella tua"
-          titleAccent="carrozzeria?"
-          lead="Ti facciamo vedere il gestionale sui numeri veri di una carrozzeria: lead, preventivi e pratiche in un flusso solo. Una call, zero impegno."
+          kicker="Il CRM del tuo settore"
+          title="Vuoi un CRM cucito sul tuo"
+          titleAccent="settore?"
+          lead="Ti mostriamo il gestionale sui numeri veri del primo verticale — la carrozzeria — e come lo adattiamo al tuo settore. Una call, zero impegno."
           primaryLabel="Prenota una demo"
         />
       </div>
