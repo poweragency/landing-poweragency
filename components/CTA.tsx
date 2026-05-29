@@ -5,7 +5,21 @@ import { CONTACT } from "@/lib/content";
 import { EASE } from "@/lib/motion";
 import MagneticButton from "./MagneticButton";
 
-export default function CTA() {
+type Props = {
+  kicker?: string;
+  title?: string;
+  titleAccent?: string;
+  lead?: string;
+  primaryLabel?: string;
+};
+
+export default function CTA({
+  kicker = "Inizia il viaggio",
+  title = "Pronto a costruire un sistema che",
+  titleAccent = "genera clienti?",
+  lead = "Una call, zero impegno. Ti diciamo cosa funziona davvero per il tuo business — e se non fa per te, te lo diciamo.",
+  primaryLabel = "Prenota una call",
+}: Props) {
   return (
     <section id="contatti" className="scroll-mt-24 px-6 pb-32 pt-4">
       <div className="mx-auto max-w-[1180px]">
@@ -26,17 +40,15 @@ export default function CTA() {
           />
 
           <span className="relative font-head text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-orange">
-            Inizia il viaggio
+            {kicker}
           </span>
 
           <h2 className="relative mx-auto mt-3.5 max-w-[20ch] font-head text-[clamp(2rem,5vw,3.4rem)] font-bold leading-[1.08] tracking-[-0.025em]">
-            Pronto a costruire un sistema che{" "}
-            <span className="grad-text">genera clienti?</span>
+            {title} <span className="grad-text">{titleAccent}</span>
           </h2>
 
           <p className="relative mx-auto mt-5 max-w-[56ch] text-[1.05rem] text-mut">
-            Una call, zero impegno. Ti diciamo cosa funziona davvero per il tuo
-            business — e se non fa per te, te lo diciamo.
+            {lead}
           </p>
 
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3.5">
@@ -44,7 +56,7 @@ export default function CTA() {
               href={`mailto:${CONTACT.email}`}
               className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(255,45,45,0.55)]"
             >
-              Prenota una call
+              {primaryLabel}
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

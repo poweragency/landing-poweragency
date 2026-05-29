@@ -28,7 +28,13 @@ export default function SoftwarePage() {
       ))}
 
       <div className="pt-8">
-        <CTA />
+        <CTA
+          kicker="Provali sul campo"
+          title="Vuoi i nostri software"
+          titleAccent="al lavoro per te?"
+          lead="Ti mostriamo PowerLeads, PowerLanding e gli altri sulle operazioni reali — non in una demo finta. Una call, zero impegno."
+          primaryLabel="Richiedi una demo"
+        />
       </div>
     </main>
   );

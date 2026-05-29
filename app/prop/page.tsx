@@ -25,7 +25,13 @@ export default function PropPage() {
       <VerticalShowcase vertical={PROP} />
 
       <div className="pt-4">
-        <CTA />
+        <CTA
+          kicker="Sistematizza l'operatività"
+          title="Vuoi sistematizzare i tuoi"
+          titleAccent="account prop?"
+          lead="Ti raccontiamo come gestiamo 120+ account con software interno e hedging automatico. Una call, zero fuffa."
+          primaryLabel="Parliamone"
+        />
       </div>
     </main>
   );

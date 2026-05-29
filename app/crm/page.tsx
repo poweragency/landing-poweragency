@@ -32,7 +32,13 @@ export default function CrmPage() {
       <CaseStudy />
 
       <div className="pt-8">
-        <CTA />
+        <CTA
+          kicker="Ordine nella tua officina"
+          title="Vuoi questo CRM nella tua"
+          titleAccent="carrozzeria?"
+          lead="Ti facciamo vedere il gestionale sui numeri veri di una carrozzeria: lead, preventivi e pratiche in un flusso solo. Una call, zero impegno."
+          primaryLabel="Prenota una demo"
+        />
       </div>
     </main>
   );

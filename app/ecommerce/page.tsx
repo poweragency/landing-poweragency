@@ -25,7 +25,13 @@ export default function EcommercePage() {
       <VerticalShowcase vertical={ECOMMERCE} />
 
       <div className="pt-4">
-        <CTA />
+        <CTA
+          kicker="Consulenza ecommerce"
+          title="Vuoi scalare il tuo ecommerce con chi lo fa"
+          titleAccent="ogni giorno?"
+          lead="Una consulenza 1:1 con chi gestisce store reali fino a 10.000€/day: prodotto, campagne e numeri. Paghi competenza operativa, non teoria."
+          primaryLabel="Prenota una consulenza"
+        />
       </div>
     </main>
   );
