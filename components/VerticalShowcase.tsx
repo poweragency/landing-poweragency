@@ -131,13 +131,18 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
                     )}
                   </span>
                 </div>
-                <div className="text-left">
+                <div className="max-w-[34ch] text-left">
                   <p className="font-head text-[1.05rem] font-semibold">
                     {vertical.owner.name}
                   </p>
                   <p className="text-[0.88rem] font-medium text-orange">
                     {vertical.owner.role}
                   </p>
+                  {vertical.owner.bio && (
+                    <p className="mt-1.5 text-[0.85rem] leading-snug text-mut">
+                      {vertical.owner.bio}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
