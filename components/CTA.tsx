@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { CONTACT } from "@/lib/content";
 import { EASE } from "@/lib/motion";
 import MagneticButton from "./MagneticButton";
+import LeadModal from "./LeadModal";
 
 type Props = {
   kicker?: string;
@@ -20,6 +23,9 @@ export default function CTA({
   lead = "Una call, zero impegno. Ti diciamo cosa funziona davvero per il tuo business — e se non fa per te, te lo diciamo.",
   primaryLabel = "Prenota una call",
 }: Props) {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
   return (
     <section id="contatti" className="scroll-mt-24 px-6 pb-32 pt-4">
       <div className="mx-auto max-w-[1180px]">
@@ -53,7 +59,7 @@ export default function CTA({
 
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3.5">
             <MagneticButton
-              href={`mailto:${CONTACT.email}`}
+              onClick={() => setOpen(true)}
               className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(255,45,45,0.55)]"
             >
               {primaryLabel}
@@ -72,6 +78,13 @@ export default function CTA({
           </div>
         </motion.div>
       </div>
+
+      <LeadModal
+        open={open}
+        onClose={() => setOpen(false)}
+        source={pathname}
+        title={primaryLabel}
+      />
     </section>
   );
 }
