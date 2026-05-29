@@ -37,7 +37,7 @@ function VisualPanel({ software }: { software: Software }) {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="mx-auto grid h-20 w-20 place-items-center rounded-[20px] border border-line-strong bg-orange/10"
           >
-            <Icon name={software.icon} className="h-9 w-9 text-amber" />
+            <Icon name={software.icon} className="h-9 w-9 text-orange" />
           </motion.div>
           <p className="mt-5 font-head text-[1.6rem] font-bold tracking-tight">
             {software.name}
