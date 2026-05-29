@@ -305,15 +305,15 @@ export type Person = {
 
 export const TEAM: Person[] = [
   { name: "Vincenzo", role: "CEO · Verticale su ecommerce", photo: "/team/vincenzo.jpg" },
-  { name: "William", role: "CTO · Verticale su software" },
+  { name: "William", role: "CTO · Verticale su software", photo: "/team/william.jpg" },
   { name: "Mattia", role: "Tecnico · Verticale su software" },
   { name: "Wassim", role: "Tecnico · Verticale su prop" },
 ];
 
 // squadra estesa: marketing
 export const SQUAD: Person[] = [
-  { name: "Gabriele", role: "Marketing" },
-  { name: "Giorgio", role: "Marketing" },
+  { name: "Gabriele", role: "Marketing", photo: "/team/gabriele.jpg" },
+  { name: "Giorgio", role: "Marketing", photo: "/team/giorgio.jpg" },
 ];
 
 export const CONTACT = {
