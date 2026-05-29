@@ -293,13 +293,13 @@ export const TEAM: Person[] = [
   { name: "Vincenzo", role: "CEO · Vertical ecommerce" },
   { name: "Mattia", role: "Tecnico · AI · sviluppo" },
   { name: "Wassim", role: "Vertical prop firms" },
+  { name: "William", role: "Tecnico · AI · sviluppo" },
 ];
 
-// squadra estesa: ruoli misti (sales + tecnico)
+// squadra estesa: marketing
 export const SQUAD: Person[] = [
-  { name: "Gabriele", role: "Sales · Closer" },
-  { name: "Giorgio", role: "Sales · Closer" },
-  { name: "William", role: "Tecnico · sviluppo" },
+  { name: "Gabriele", role: "Marketing" },
+  { name: "Giorgio", role: "Marketing" },
 ];
 
 export const CONTACT = {
