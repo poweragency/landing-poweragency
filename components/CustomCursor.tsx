@@ -44,7 +44,7 @@ export default function CustomCursor() {
     <>
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[200] rounded-full mix-blend-screen"
+        className="pointer-events-none fixed left-0 top-0 z-[400] rounded-full mix-blend-screen"
         style={{
           x: sx,
           y: sy,
@@ -62,7 +62,7 @@ export default function CustomCursor() {
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[200] h-1.5 w-1.5 rounded-full bg-white"
+        className="pointer-events-none fixed left-0 top-0 z-[400] h-1.5 w-1.5 rounded-full bg-white"
         style={{ x, y, translateX: "-50%", translateY: "-50%" }}
       />
     </>

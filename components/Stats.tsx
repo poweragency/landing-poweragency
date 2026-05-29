@@ -19,6 +19,11 @@ export default function Stats() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
               className="group bg-bg p-8 transition-colors duration-300 hover:bg-surface md:p-9"
             >
+              {s.kicker && (
+                <span className="mb-1.5 block font-head text-[0.85rem] font-semibold uppercase tracking-[0.16em] text-red">
+                  {s.kicker}
+                </span>
+              )}
               <div className="font-head text-[clamp(1.8rem,3.6vw,2.7rem)] font-bold leading-none tracking-tight">
                 <span className="grad-text">
                   <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />

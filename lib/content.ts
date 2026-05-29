@@ -6,12 +6,21 @@ export const NAV_LINKS = [
   { href: "/ecommerce", label: "Ecommerce" },
 ] as const;
 
-export const STATS = [
+export type Stat = {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  display?: string;
+  label: string;
+  kicker?: string;
+};
+
+export const STATS: Stat[] = [
   { value: 10000, prefix: "", suffix: "€", display: "/day", label: "Ecommerce gestito ogni giorno" },
   { value: 120, prefix: "", suffix: "+", display: "", label: "Account prop operativi ogni giorno" },
   { value: 60, prefix: "", suffix: "+", display: "", label: "Lead generati in due settimane per una carrozzeria" },
-  { value: 1000, prefix: "", suffix: "", display: "", label: "Lead generati in un solo giorno" },
-] as const;
+  { value: 1000, prefix: "", suffix: "", display: "", label: "generati in un solo giorno", kicker: "Lead" },
+];
 
 export const FEATURES = [
   {
@@ -230,7 +239,7 @@ export const PROP: Vertical = {
     { step: "04", title: "Scala", text: "Da pochi account a oltre 120 in parallelo, senza perdere il controllo del rischio." },
   ],
   quote: "Niente teoria. Solo operatività live, ogni giorno.",
-  owner: { name: "Wassim", role: "Vertical prop firms" },
+  owner: { name: "Wassim", role: "Tecnico · Verticale su prop" },
   metaTitle: "Prop firms",
   metaDescription:
     "Oltre 120 account prop gestiti ogni giorno con software interno: hedging automatico, edge matematico e operatività live su capitali propri.",
@@ -275,7 +284,7 @@ export const ECOMMERCE: Vertical = {
     { step: "04", title: "Ottimizza ogni giorno", text: "Monitoraggio delle dashboard e ritocco delle campagne, ogni giorno, per tenere il ROI." },
   ],
   quote: "Sistemi di vendita collaudati. E ancora attivi oggi.",
-  owner: { name: "Vincenzo", role: "CEO · Vertical ecommerce" },
+  owner: { name: "Vincenzo", role: "CEO · Verticale su ecommerce" },
   metaTitle: "Ecommerce",
   metaDescription:
     "Business ecommerce scalabili e ancora attivi: test di prodotto, ottimizzazione delle campagne e gestione guidata dai dati fino a 10.000€/day.",
@@ -290,10 +299,10 @@ export type Person = {
 };
 
 export const TEAM: Person[] = [
-  { name: "Vincenzo", role: "CEO · Vertical ecommerce" },
-  { name: "Mattia", role: "Tecnico · AI · sviluppo" },
-  { name: "Wassim", role: "Vertical prop firms" },
-  { name: "William", role: "Tecnico · AI · sviluppo" },
+  { name: "Vincenzo", role: "CEO · Verticale su ecommerce" },
+  { name: "William", role: "CTO · Verticale su software" },
+  { name: "Mattia", role: "Tecnico · Verticale su software" },
+  { name: "Wassim", role: "Tecnico · Verticale su prop" },
 ];
 
 // squadra estesa: marketing

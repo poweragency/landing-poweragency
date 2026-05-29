@@ -21,6 +21,23 @@ type Props = {
 
 type Status = "idle" | "loading" | "success" | "error";
 
+const SECTORS = [
+  { value: "", label: "Da definire" },
+  { value: "software", label: "Software proprietari" },
+  { value: "crm", label: "CRM carrozzerie" },
+  { value: "prop", label: "Prop firms" },
+  { value: "ecommerce", label: "Ecommerce" },
+];
+
+function defaultSector(source?: string) {
+  const s = source || "";
+  if (s.includes("/ecommerce")) return "ecommerce";
+  if (s.includes("/prop")) return "prop";
+  if (s.includes("/crm")) return "crm";
+  if (s.includes("/software")) return "software";
+  return "";
+}
+
 const Field = forwardRef<
   HTMLInputElement,
   {
@@ -82,6 +99,7 @@ export default function LeadModal({
       name: String(fd.get("name") || "").trim(),
       email: String(fd.get("email") || "").trim(),
       phone: String(fd.get("phone") || "").trim(),
+      sector: String(fd.get("sector") || "").trim(),
       source: source || "",
     };
     if (!payload.name || !payload.email || !payload.phone) {
@@ -204,6 +222,23 @@ export default function LeadModal({
                     placeholder="+39 333 1234567"
                     autoComplete="tel"
                   />
+                  <label className="flex flex-col gap-1.5 text-left">
+                    <span className="font-head text-[0.8rem] font-medium text-mut">
+                      Settore di interesse
+                    </span>
+                    <select
+                      name="sector"
+                      defaultValue={defaultSector(source)}
+                      data-cursor="hover"
+                      className="cursor-pointer rounded-[12px] border border-line bg-bg/60 px-4 py-3 text-[0.98rem] text-ink outline-none transition-colors focus:border-orange focus:bg-bg"
+                    >
+                      {SECTORS.map((s) => (
+                        <option key={s.value} value={s.value} className="bg-surface text-ink">
+                          {s.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
                   {status === "error" && (
                     <p className="text-[0.88rem] text-red">{errorMsg}</p>

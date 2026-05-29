@@ -4,6 +4,7 @@ type LeadPayload = {
   name?: unknown;
   email?: unknown;
   phone?: unknown;
+  sector?: unknown;
   source?: unknown;
 };
 
@@ -21,6 +22,7 @@ export async function POST(req: Request) {
   const name = str(body.name);
   const email = str(body.email);
   const phone = str(body.phone);
+  const sector = str(body.sector);
   const source = str(body.source);
 
   if (!name || !email || !phone) {
@@ -34,6 +36,7 @@ export async function POST(req: Request) {
     name,
     email,
     phone,
+    sector: sector || "(non specificato)",
     source: source || "(sconosciuto)",
     receivedAt: new Date().toISOString(),
   };
