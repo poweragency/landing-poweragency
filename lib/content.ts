@@ -10,7 +10,7 @@ export const STATS = [
   { value: 10000, prefix: "", suffix: "€", display: "/day", label: "Ecommerce gestito quotidianamente" },
   { value: 120, prefix: "", suffix: "+", display: "", label: "Account prop firm operativi ogni giorno" },
   { value: 60, prefix: "", suffix: "+", display: "", label: "Lead generati in 2 settimane (carrozzeria)" },
-  { value: 15000, prefix: "", suffix: "€", display: "", label: "Fatturato generato da un singolo caso" },
+  { value: 1000, prefix: "", suffix: "", display: "", label: "Lead generate in un giorno" },
 ] as const;
 
 export const FEATURES = [
@@ -168,7 +168,7 @@ export const CRM = {
 export const CASE_METRICS = [
   { value: 60, suffix: "+", label: "lead in 2 settimane" },
   { value: 5, suffix: "", label: "clienti chiusi" },
-  { value: 15000, suffix: "€", label: "fatturato generato" },
+  { value: 1000, suffix: "", label: "lead generate in un giorno" },
 ] as const;
 
 /* ============================================================
