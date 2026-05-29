@@ -304,7 +304,7 @@ export type Person = {
 };
 
 export const TEAM: Person[] = [
-  { name: "Vincenzo", role: "CEO · Verticale su ecommerce", photo: "/team/vincenzo.jpg" },
+  { name: "Vincenzo", role: "CEO", photo: "/team/vincenzo.jpg" },
   { name: "William", role: "CTO · Verticale su software", photo: "/team/william.jpg" },
   { name: "Mattia", role: "Tecnico · Verticale su software", photo: "/team/mattia.jpg" },
   { name: "Wassim", role: "Tecnico · Verticale su prop" },
