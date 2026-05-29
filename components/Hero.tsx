@@ -73,14 +73,6 @@ export default function Hero() {
               →
             </span>
           </MagneticButton>
-
-          <MagneticButton
-            href="/software"
-            strength={0.25}
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-7 py-4 font-head text-base font-semibold text-ink transition-colors hover:border-line-strong hover:bg-orange/[0.08]"
-          >
-            Esplora i prodotti
-          </MagneticButton>
         </motion.div>
 
         <motion.p
@@ -91,22 +83,6 @@ export default function Hero() {
         </motion.p>
       </motion.div>
 
-      {/* scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="pointer-events-none mt-16 flex justify-center"
-        aria-hidden
-      >
-        <motion.div
-          animate={reduce ? {} : { y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-10 w-6 items-start justify-center rounded-full border border-line p-1.5"
-        >
-          <span className="h-2 w-1 rounded-full bg-gradient-to-b from-amber to-red" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
