@@ -23,8 +23,8 @@ export default function SoftwarePage() {
         lead="Tre strumenti nati dalle nostre operazioni quotidiane: lead generation, contenuti e siti. Ognuno testato sul campo, non in una demo."
       />
 
-      {SOFTWARE.map((s, i) => (
-        <SoftwareDetail key={s.slug} software={s} reversed={i % 2 === 1} />
+      {SOFTWARE.map((s) => (
+        <SoftwareDetail key={s.slug} software={s} />
       ))}
 
       <div className="pt-8">
