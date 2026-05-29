@@ -23,7 +23,7 @@ export default function Counter({
   className,
 }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
+  const inView = useInView(ref, { once: true });
   const reduce = useReducedMotion();
   const [display, setDisplay] = useState(0);
 
