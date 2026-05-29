@@ -282,7 +282,7 @@ export const ECOMMERCE: Vertical = {
     { step: "04", title: "Ottimizza ogni giorno", text: "Monitoraggio delle dashboard e ritocco delle campagne, ogni giorno, per tenere il ROI." },
   ],
   quote: "Sistemi di vendita collaudati. E ancora attivi oggi.",
-  owner: { name: "Vincenzo", role: "CEO · Verticale su ecommerce" },
+  owner: { name: "Vincenzo", role: "CEO · Verticale su ecommerce", photo: "/team/vincenzo.jpg" },
   metaTitle: "Ecommerce",
   metaDescription:
     "Business ecommerce scalabili e ancora attivi: test di prodotto, ottimizzazione delle campagne e gestione guidata dai dati fino a 10.000€/day.",
@@ -294,10 +294,11 @@ export const ECOMMERCE: Vertical = {
 export type Person = {
   name: string;
   role: string;
+  photo?: string;
 };
 
 export const TEAM: Person[] = [
-  { name: "Vincenzo", role: "CEO · Verticale su ecommerce" },
+  { name: "Vincenzo", role: "CEO · Verticale su ecommerce", photo: "/team/vincenzo.jpg" },
   { name: "William", role: "CTO · Verticale su software" },
   { name: "Mattia", role: "Tecnico · Verticale su software" },
   { name: "Wassim", role: "Tecnico · Verticale su prop" },

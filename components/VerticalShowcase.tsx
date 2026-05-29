@@ -118,8 +118,17 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
               <div className="flex items-center gap-4">
                 <div className="relative grid h-[60px] w-[60px] place-items-center rounded-full">
                   <span className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full [background:conic-gradient(from_140deg,#ffb347,#ff2d2d,#c4161c,#ffb347)]" />
-                  <span className="absolute inset-[3px] grid place-items-center rounded-full bg-surface-2 font-head text-[1.1rem] font-bold">
-                    {vertical.owner.name.charAt(0)}
+                  <span className="absolute inset-[3px] grid place-items-center overflow-hidden rounded-full bg-surface-2 font-head text-[1.1rem] font-bold">
+                    {vertical.owner.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={vertical.owner.photo}
+                        alt={vertical.owner.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      vertical.owner.name.charAt(0)
+                    )}
                   </span>
                 </div>
                 <div className="text-left">
