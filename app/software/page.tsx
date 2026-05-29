@@ -20,7 +20,7 @@ export default function SoftwarePage() {
             Software che usiamo <span className="grad-text">prima di vendere.</span>
           </>
         }
-        lead="Tre strumenti nati dalle nostre operazioni reali. Lead generation, contenuti e siti: ognuno testato sul campo, non in una demo finta."
+        lead="Tre strumenti nati dalle nostre operazioni quotidiane: lead generation, contenuti e siti. Ognuno testato sul campo, non in una demo."
       />
 
       {SOFTWARE.map((s, i) => (
@@ -32,7 +32,7 @@ export default function SoftwarePage() {
           kicker="Provali sul campo"
           title="Vuoi i nostri software"
           titleAccent="al lavoro per te?"
-          lead="Ti mostriamo PowerLeads, PowerLanding e gli altri sulle operazioni reali — non in una demo finta. Una call, zero impegno."
+          lead="Ti mostriamo PowerLeads, PowerLanding e gli altri al lavoro su operazioni reali, non in una demo. Una call, zero impegno."
           primaryLabel="Richiedi una demo"
         />
       </div>

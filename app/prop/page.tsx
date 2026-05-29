@@ -29,7 +29,7 @@ export default function PropPage() {
           kicker="Sistematizza l'operatività"
           title="Vuoi sistematizzare i tuoi"
           titleAccent="account prop?"
-          lead="Ti raccontiamo come gestiamo 120+ account con software interno e hedging automatico. Una call, zero fuffa."
+          lead="Ti raccontiamo come gestiamo oltre 120 account con software interno e hedging automatico. Una call, zero giri di parole."
           primaryLabel="Parliamone"
         />
       </div>

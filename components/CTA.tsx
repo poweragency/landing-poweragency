@@ -17,10 +17,10 @@ type Props = {
 };
 
 export default function CTA({
-  kicker = "Inizia il viaggio",
+  kicker = "Costruiamo insieme",
   title = "Pronto a costruire un sistema che",
   titleAccent = "genera clienti?",
-  lead = "Una call, zero impegno. Ti diciamo cosa funziona davvero per il tuo business — e se non fa per te, te lo diciamo.",
+  lead = "Una call, zero impegno. Ti diciamo cosa funziona davvero per il tuo business. E se non è il caso, te lo diciamo.",
   primaryLabel = "Prenota una call",
 }: Props) {
   const [open, setOpen] = useState(false);

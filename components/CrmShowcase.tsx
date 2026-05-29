@@ -16,7 +16,7 @@ export default function CrmShowcase() {
           <SectionHead
             kicker="Cosa fa"
             title="Tutto il flusso, un solo gestionale"
-            lead="Dal primo contatto alla pratica chiusa. Niente fogli Excel, niente lead persi tra i canali."
+            lead="Dal primo contatto alla pratica chiusa. Niente più fogli Excel, niente più lead persi tra i canali."
           />
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -51,7 +51,7 @@ export default function CrmShowcase() {
           <SectionHead
             kicker="Come funziona"
             title="Dal lead alla consegna"
-            lead="Un percorso lineare, con l'AI che lavora i contatti nei punti dove di solito si perdono."
+            lead="Un percorso lineare, con l'AI che presidia i punti in cui di solito i contatti si perdono."
           />
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">

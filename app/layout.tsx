@@ -21,15 +21,15 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "PowerAgency — Sistemi AI per chi vuole risultati reali",
+    default: "PowerAgency — Sistemi AI per risultati reali",
     template: "%s — PowerAgency",
   },
   description:
-    "Costruiamo asset che generano clienti. Sito, lead generation e CRM in un unico sistema AI-powered. Se non funziona sul nostro business, non lo portiamo fuori.",
+    "Costruiamo asset che generano clienti: sito, lead generation e CRM in un unico sistema guidato dall'AI. Se non funziona sul nostro business, non lo portiamo fuori.",
   openGraph: {
-    title: "PowerAgency — Sistemi AI per chi vuole risultati reali",
+    title: "PowerAgency — Sistemi AI per risultati reali",
     description:
-      "Costruiamo asset che generano clienti. Non un'agenzia: un team che fa palestra ogni giorno sul proprio business.",
+      "Costruiamo asset che generano clienti. Non un'agenzia, ma un team che ogni giorno testa sul proprio business ciò che vende.",
     type: "website",
     locale: "it_IT",
   },

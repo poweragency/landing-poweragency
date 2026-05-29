@@ -39,7 +39,7 @@ export default function Team() {
         <SectionHead
           kicker="Chi siamo"
           title="Il team"
-          lead="Niente reparti infiniti. Le persone che costruiscono il tuo sistema sono le stesse che lo usano ogni giorno."
+          lead="Niente reparti infiniti: chi costruisce il tuo sistema è la stessa persona che lo usa ogni giorno."
         />
 
         <div className="mx-auto grid max-w-[420px] grid-cols-1 gap-5 md:max-w-none md:grid-cols-3">

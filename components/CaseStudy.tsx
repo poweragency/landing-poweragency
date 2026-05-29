@@ -31,7 +31,7 @@ export default function CaseStudy() {
           </h2>
 
           <p className="mt-5 italic text-mut">
-            — Cliente, dopo 2 settimane dal lancio del sistema
+            — Cliente, due settimane dopo il lancio del sistema
           </p>
 
           <div className="mt-12 flex flex-wrap gap-12">

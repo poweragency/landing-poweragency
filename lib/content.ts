@@ -7,27 +7,27 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { value: 10000, prefix: "", suffix: "€", display: "/day", label: "Ecommerce gestito quotidianamente" },
-  { value: 120, prefix: "", suffix: "+", display: "", label: "Account prop firm operativi ogni giorno" },
-  { value: 60, prefix: "", suffix: "+", display: "", label: "Lead generati in 2 settimane (carrozzeria)" },
-  { value: 1000, prefix: "", suffix: "", display: "", label: "Lead generate in un giorno" },
+  { value: 10000, prefix: "", suffix: "€", display: "/day", label: "Ecommerce gestito ogni giorno" },
+  { value: 120, prefix: "", suffix: "+", display: "", label: "Account prop operativi ogni giorno" },
+  { value: 60, prefix: "", suffix: "+", display: "", label: "Lead generati in due settimane per una carrozzeria" },
+  { value: 1000, prefix: "", suffix: "", display: "", label: "Lead generati in un solo giorno" },
 ] as const;
 
 export const FEATURES = [
   {
     icon: "⚙️",
     title: "Software testati sul campo",
-    text: "Ogni tool nasce dalle nostre operazioni reali. Lo proviamo sul nostro business prima di portarlo fuori. Zero demo finte.",
+    text: "Ogni strumento nasce dalle nostre operazioni quotidiane. Lo mettiamo alla prova sul nostro business prima di proporlo a te. Nessuna demo costruita ad arte.",
   },
   {
     icon: "🧲",
     title: "Asset che generano clienti",
-    text: "Sito, lead generation e CRM non sono tre fornitori diversi: un solo sistema AI-powered che lavora come una macchina sola.",
+    text: "Sito, lead generation e CRM non sono tre fornitori da coordinare: un unico sistema, guidato dall'AI, che lavora come una macchina sola.",
   },
   {
     icon: "🔥",
     title: "Team che fa palestra",
-    text: "Strategia, tecnica e verticali: un team che si allena ogni giorno sul proprio business. Risultati, non slide.",
+    text: "Strategia, tecnologia e verticali: un team che si allena ogni giorno sul proprio business. Portiamo risultati, non slide.",
   },
 ] as const;
 
@@ -62,17 +62,17 @@ export const SOFTWARE: Software[] = [
     icon: "🧲",
     headline: "Un sistema. Non cinque tool.",
     description:
-      "Piattaforma all-in-one che automatizza l'acquisizione clienti: estrae lead da Instagram e Google Maps, genera icebreaker personalizzati con AI e invia DM ed email in automatico. Una sola dashboard, un solo abbonamento — al posto di 3-5 strumenti separati da 200-400€/mese.",
+      "La piattaforma all-in-one per l'acquisizione clienti. Estrae lead da Instagram e Google Maps, scrive icebreaker su misura con l'AI e invia DM ed email in automatico. Una dashboard, un abbonamento — al posto di cinque strumenti scollegati da 200-400€ al mese.",
     features: [
-      "Estrazione lead da profili Instagram e ricerche Google Maps",
-      "Icebreaker su misura generati con Anthropic Claude",
+      "Lead estratti da profili Instagram e ricerche Google Maps",
+      "Icebreaker personalizzati, scritti dall'AI di Anthropic (Claude)",
       "Outreach automatico: DM via estensione Chrome ed email dal tuo dominio",
-      "Setup in 5 minuti, senza competenze tecniche",
-      "Dati freschi ad ogni ricerca, mai database obsoleti",
+      "Attivo in cinque minuti, senza competenze tecniche",
+      "Dati aggiornati a ogni ricerca, mai liste obsolete",
     ],
     audience:
-      "Coach, creator, freelancer, e-commerce · Agenzie, studi professionali, SaaS, consulenza, real estate",
-    pricing: "Da 49€/mese · 7 giorni di prova gratis con 500 crediti inclusi",
+      "Coach, creator, freelancer ed e-commerce · Agenzie, studi professionali, SaaS, consulenza e real estate",
+    pricing: "Da 49€/mese · 7 giorni di prova gratuita, 500 crediti inclusi",
     url: "https://powerleads.poweragency.it",
     ctaLabel: "Vai a PowerLeads",
   },
@@ -83,9 +83,9 @@ export const SOFTWARE: Software[] = [
     tag: "In arrivo",
     status: "soon",
     icon: "🎬",
-    headline: "Sezione in arrivo.",
+    headline: "In arrivo.",
     description:
-      "Stiamo costruendo PowerReel. Questa sezione è da compilare: feature, descrizione e dettagli arrivano a breve.",
+      "PowerReel è in costruzione. Presto qui troverai funzionalità, dettagli e tutto il resto.",
     features: [],
     ctaLabel: "Resta aggiornato",
   },
@@ -98,17 +98,17 @@ export const SOFTWARE: Software[] = [
     icon: "🚀",
     headline: "Sito su misura in 48 ore.",
     description:
-      "Sito completamente personalizzato, disegnato e scritto a mano — nessun template. Copy strategico che converte, codice artigianale, hosting e dominio inclusi. Consegna garantita in 48 ore dal pagamento.",
+      "Un sito su misura, disegnato e scritto a mano: nessun template. Copy che converte, codice curato riga per riga, hosting e dominio inclusi. Online in 48 ore, garantite.",
     features: [
-      "Sviluppo 100% personalizzato, nessun template o preset",
+      "Sviluppo su misura al 100%, nessun template",
       "Codice scritto a mano, riga per riga",
-      "Copy strategico studiato per convertire",
-      "Hosting e dominio inclusi nel prezzo",
-      "Codice sorgente e repository ceduti a te, per sempre",
-      "Massimo 30 progetti al mese per qualità controllata",
+      "Copy strategico, pensato per convertire",
+      "Hosting e dominio inclusi",
+      "Codice sorgente e repository tuoi, per sempre",
+      "Massimo 30 progetti al mese, per non sacrificare la qualità",
     ],
     audience:
-      "Piccole imprese e professionisti — dentisti, avvocati, personal trainer, studi — che vogliono un sito credibile senza spendere migliaia di euro.",
+      "Professionisti e piccole imprese — dentisti, avvocati, personal trainer, studi — che vogliono un sito credibile senza spendere migliaia di euro.",
     pricing: "Da 397€ · 3 livelli: Standard, Premium, Signature",
     url: "https://powersite.vercel.app",
     ctaLabel: "Scopri PowerLanding",
@@ -121,20 +121,20 @@ export const SOFTWARE: Software[] = [
 export const CRM = {
   name: "CRM Carrozzerie",
   tag: "Verticale · Officine & Carrozzerie",
-  headline: "Gestione lead & pratiche, in un unico flusso.",
+  headline: "Lead e pratiche, in un unico flusso.",
   description:
-    "Il gestionale verticale per carrozzerie: dal primo contatto del cliente alla pratica chiusa. Lead, preventivi, lavorazioni e follow-up in un'unica pipeline — con l'AI che lavora i contatti al posto tuo.",
+    "Il gestionale verticale per carrozzerie: dal primo contatto alla pratica chiusa. Lead, preventivi, lavorazioni e follow-up in un'unica pipeline, con l'AI che lavora i contatti al posto tuo.",
   url: "https://crm-carrozzerie.vercel.app",
   modules: [
     {
       icon: "📥",
       title: "Gestione lead",
-      text: "Ogni richiesta entra, viene qualificata e assegnata. Niente contatti persi tra WhatsApp, telefono e mail.",
+      text: "Ogni richiesta entra, viene qualificata e assegnata. Nessun contatto perso tra WhatsApp, telefono e mail.",
     },
     {
       icon: "📋",
-      title: "Pratiche & preventivi",
-      text: "Dalla stima al consuntivo: storico completo di ogni pratica, documenti e stato di avanzamento sempre allineati.",
+      title: "Pratiche e preventivi",
+      text: "Dalla stima al consuntivo: storico, documenti e stato di avanzamento di ogni pratica, sempre allineati.",
     },
     {
       icon: "🔧",
@@ -143,13 +143,13 @@ export const CRM = {
     },
     {
       icon: "🤖",
-      title: "Follow-up AI",
-      text: "I preventivi non chiusi vengono ricontattati in automatico. L'AI scrive e insiste al posto tuo, con il tono giusto.",
+      title: "Follow-up con l'AI",
+      text: "I preventivi in sospeso vengono ricontattati in automatico: l'AI scrive e insiste al posto tuo, con il tono giusto.",
     },
     {
       icon: "🔗",
-      title: "Lead gen integrata",
-      text: "I contatti che arrivano dalle ads entrano già dentro al CRM, pronti da lavorare. Zero copia-incolla.",
+      title: "Lead generation integrata",
+      text: "I contatti dalle ads entrano già nel CRM, pronti da lavorare. Nessun copia-incolla.",
     },
     {
       icon: "📊",
@@ -166,7 +166,7 @@ export const CRM = {
 } as const;
 
 export const CASE_METRICS = [
-  { value: 60, suffix: "+", label: "lead in 2 settimane" },
+  { value: 60, suffix: "+", label: "lead in due settimane" },
   { value: 5, suffix: "", label: "clienti chiusi" },
   { value: 15000, suffix: "€", label: "fatturato generato" },
 ] as const;
@@ -195,7 +195,7 @@ export const PROP: Vertical = {
   kicker: "Il verticale · Prop firms",
   title: "120+ account prop,",
   titleAccent: "gestiti ogni giorno.",
-  lead: "Gestione sistematica di oltre 120 account prop con software costruito internamente. Hedging automatico sui capitali propri, edge matematico, zero teoria: solo operatività live in produzione.",
+  lead: "Oltre 120 account prop gestiti in modo sistematico, con software costruito da noi. Hedging automatico sui capitali propri, edge matematico, zero teoria: solo operatività live, in produzione.",
   metrics: [
     { value: 120, suffix: "+", label: "account prop operativi" },
     { value: 100, suffix: "%", label: "operatività su capitali propri" },
@@ -205,62 +205,62 @@ export const PROP: Vertical = {
     {
       icon: "🤖",
       title: "Automazioni complete",
-      text: "Software interno che gestisce gli account end-to-end: niente operatività manuale, niente errori da stanchezza.",
+      text: "Software interno che gestisce gli account dall'inizio alla fine: nessuna operatività manuale, nessun errore da stanchezza.",
     },
     {
       icon: "🛡️",
       title: "Hedging automatico",
-      text: "Copertura sistematica sui capitali propri. Il rischio è gestito da regole, non da emozioni.",
+      text: "Copertura sistematica sui capitali propri. Il rischio è gestito da regole, non dalle emozioni.",
     },
     {
       icon: "📐",
       title: "Edge matematico",
-      text: "Sistemi costruiti su un vantaggio statistico provato e sistematizzato, non su sensazioni.",
+      text: "Sistemi costruiti su un vantaggio statistico provato e sistematizzato, non sull'intuito.",
     },
     {
       icon: "⚡",
-      title: "100% in produzione",
+      title: "Sempre in produzione",
       text: "Operatività live ogni giorno sui nostri capitali. Quello che vendiamo è quello che usiamo.",
     },
   ],
   process: [
-    { step: "01", title: "Sistema con edge", text: "Partiamo da un vantaggio matematico misurabile, non da una strategia sentita dire." },
-    { step: "02", title: "Sistematizzazione", text: "Lo trasformiamo in regole eseguibili da software: ripetibili e scalabili." },
+    { step: "01", title: "Vantaggio misurabile", text: "Partiamo da un edge matematico verificabile, non da una strategia sentita dire in giro." },
+    { step: "02", title: "Sistematizzazione", text: "Lo trasformiamo in regole eseguibili dal software: ripetibili e scalabili." },
     { step: "03", title: "Automazione", text: "Le automazioni gestiscono gli account: esecuzione, hedging, monitoraggio." },
-    { step: "04", title: "Scala", text: "Da pochi account a 120+ in parallelo, mantenendo il controllo del rischio." },
+    { step: "04", title: "Scala", text: "Da pochi account a oltre 120 in parallelo, senza perdere il controllo del rischio." },
   ],
   quote: "Niente teoria. Solo operatività live, ogni giorno.",
   owner: { name: "Wassim", role: "Vertical prop firms" },
   metaTitle: "Prop firms",
   metaDescription:
-    "120+ account prop gestiti ogni giorno con software interno: hedging automatico, edge matematico, operatività live su capitali propri.",
+    "Oltre 120 account prop gestiti ogni giorno con software interno: hedging automatico, edge matematico e operatività live su capitali propri.",
 };
 
 export const ECOMMERCE: Vertical = {
   kicker: "Il verticale · Ecommerce",
   title: "Da dipendente a",
   titleAccent: "10.000€ al giorno.",
-  lead: "Business ecommerce scalabili con sistemi di vendita collaudati — e ancora attivi oggi. Testing prodotti iterativo, analisi dashboard costante, ottimizzazione delle campagne millimetrica.",
+  lead: "Business ecommerce scalabili, con sistemi di vendita collaudati e ancora attivi oggi. Test di prodotto continui, analisi dei dati costante, ottimizzazione delle campagne al millimetro.",
   metrics: [
     { value: 10000, suffix: "€/day", label: "ecommerce gestito in scala" },
-    { value: 100, suffix: "%", label: "data-driven, zero intuito" },
-    { value: 0, suffix: "", label: "store demo: sono tutti reali" },
+    { value: 100, suffix: "%", label: "decisioni guidate dai dati" },
+    { value: 0, suffix: "", label: "store di facciata: sono tutti reali" },
   ],
   features: [
     {
       icon: "🧪",
-      title: "Testing sistematico",
-      text: "Prodotti testati in modo iterativo: i dati decidono cosa scala e cosa si taglia. Niente affezione al prodotto.",
+      title: "Test continui",
+      text: "Prodotti testati in modo iterativo: sono i dati a decidere cosa scalare e cosa tagliare. Nessun innamoramento del prodotto.",
     },
     {
       icon: "📊",
-      title: "Data-driven",
-      text: "Analisi costante delle dashboard. Ogni euro speso in ads ha una metrica che lo giustifica.",
+      title: "Guidati dai dati",
+      text: "Analisi costante delle dashboard: ogni euro speso in ads ha una metrica che lo giustifica.",
     },
     {
       icon: "🎯",
       title: "Campagne ottimizzate",
-      text: "Ottimizzazione millimetrica delle campagne pubblicitarie, non set-and-forget.",
+      text: "Campagne pubblicitarie curate al millimetro, non lasciate a sé stesse.",
     },
     {
       icon: "🏪",
@@ -271,18 +271,18 @@ export const ECOMMERCE: Vertical = {
   process: [
     { step: "01", title: "Ricerca prodotto", text: "Selezione basata su domanda reale e margini, non sull'hype del momento." },
     { step: "02", title: "Test rapidi", text: "Si testa veloce e si legge il mercato dai numeri, non dalle sensazioni." },
-    { step: "03", title: "Scala ciò che funziona", text: "Sul vincente si spinge il budget; sul resto si taglia senza pietà." },
-    { step: "04", title: "Ottimizza in continuo", text: "Monitoraggio dashboard e ritocco campagne ogni giorno per tenere il ROI." },
+    { step: "03", title: "Scala il vincente", text: "Sul prodotto che funziona spingiamo il budget; sul resto si taglia senza esitare." },
+    { step: "04", title: "Ottimizza ogni giorno", text: "Monitoraggio delle dashboard e ritocco delle campagne, ogni giorno, per tenere il ROI." },
   ],
   quote: "Sistemi di vendita collaudati. E ancora attivi oggi.",
   owner: { name: "Vincenzo", role: "CEO · Vertical ecommerce" },
   metaTitle: "Ecommerce",
   metaDescription:
-    "Business ecommerce scalabili e ancora attivi: testing prodotti, ottimizzazione campagne e gestione data-driven fino a 10.000€/day.",
+    "Business ecommerce scalabili e ancora attivi: test di prodotto, ottimizzazione delle campagne e gestione guidata dai dati fino a 10.000€/day.",
 };
 
 /* ============================================================
-   TEAM — fondatori + sales team (card)
+   TEAM — fondatori + squadra (card)
    ============================================================ */
 export type Person = {
   name: string;

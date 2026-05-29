@@ -48,16 +48,16 @@ export default function Hero() {
           className="mx-auto mt-7 w-full max-w-[16ch] font-head text-[clamp(2.2rem,7vw,5.4rem)] font-bold leading-[1.02] tracking-[-0.03em]"
         >
           Sistemi AI per chi vuole{" "}
-          <span className="grad-text block">risultati reali</span>
+          <span className="grad-text block">risultati, non demo</span>
         </motion.h1>
 
         <motion.p
           variants={v}
           className="mx-auto mt-7 w-full max-w-[62ch] text-[clamp(1.02rem,1.6vw,1.22rem)] leading-relaxed text-mut"
         >
-          Costruiamo asset che generano clienti. Sito, lead generation e CRM in un
-          unico sistema AI-powered. Non un&apos;agenzia: un team che fa palestra
-          ogni giorno sul proprio business.
+          Costruiamo asset che generano clienti: sito, lead generation e CRM in un
+          unico sistema guidato dall&apos;AI. Non un&apos;agenzia, ma un team che ogni
+          giorno testa sul proprio business ciò che vende.
         </motion.p>
 
         <motion.div
@@ -75,7 +75,7 @@ export default function Hero() {
           </MagneticButton>
 
           <MagneticButton
-            href="#prodotti"
+            href="/software"
             strength={0.25}
             className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-7 py-4 font-head text-base font-semibold text-ink transition-colors hover:border-line-strong hover:bg-orange/[0.08]"
           >

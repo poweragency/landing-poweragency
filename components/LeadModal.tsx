@@ -150,9 +150,9 @@ export default function LeadModal({
                 <div className="mx-auto mb-5 grid h-14 w-14 place-items-center rounded-full bg-gradient-to-r from-amber via-orange to-red text-2xl font-bold text-[#1a0a03]">
                   ✓
                 </div>
-                <h3 className="font-head text-[1.5rem] font-bold">Richiesta inviata!</h3>
+                <h3 className="font-head text-[1.5rem] font-bold">Richiesta inviata.</h3>
                 <p className="mt-2 text-mut">
-                  Ti ricontattiamo a brevissimo. Grazie.
+                  Ti ricontattiamo a breve. Grazie.
                 </p>
                 <button
                   onClick={onClose}
@@ -174,7 +174,7 @@ export default function LeadModal({
                   {title}
                 </h3>
                 <p className="mt-2 text-[0.95rem] text-mut">
-                  Compila e ti richiamiamo noi. Zero impegno.
+                  Lascia i tuoi dati: ti ricontattiamo noi. Zero impegno.
                 </p>
 
                 <form
