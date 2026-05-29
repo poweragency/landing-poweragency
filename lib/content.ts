@@ -16,7 +16,7 @@ export const STATS = [
 export const FEATURES = [
   {
     icon: "⚙️",
-    title: "Software testato sul campo",
+    title: "Software testati sul campo",
     text: "Ogni tool nasce dalle nostre operazioni reali. Lo proviamo sul nostro business prima di portarlo fuori. Zero demo finte.",
   },
   {
@@ -168,7 +168,7 @@ export const CRM = {
 export const CASE_METRICS = [
   { value: 60, suffix: "+", label: "lead in 2 settimane" },
   { value: 5, suffix: "", label: "clienti chiusi" },
-  { value: 1000, suffix: "", label: "lead generate in un giorno" },
+  { value: 15000, suffix: "€", label: "fatturato generato" },
 ] as const;
 
 /* ============================================================
