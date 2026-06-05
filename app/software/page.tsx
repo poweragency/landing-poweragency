@@ -7,7 +7,7 @@ import { pageMeta } from "@/lib/seo";
 import { serviceSchema } from "@/lib/structured-data";
 
 const DESCRIPTION =
-  "PowerLeads, PowerReel e PowerLanding: i software che usiamo ogni giorno sul nostro business prima di portarli fuori. Lead generation, contenuti e siti che convertono.";
+  "PowerLeads, PowerSocial e PowerLanding: i software che usiamo ogni giorno sul nostro business prima di portarli fuori. Lead generation, social e siti che convertono.";
 
 export const metadata = pageMeta({
   title: "Software proprietari",
