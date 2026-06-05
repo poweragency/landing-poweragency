@@ -452,10 +452,6 @@ export const ECOSISTEMA = {
     titleAccent: "Un solo ecosistema.",
     lead: "Non tre tool incollati: un'unica infrastruttura guidata dall'AI che cattura il lead, lo qualifica e te lo passa quando è caldo. Funziona perché la usiamo prima sui nostri business.",
   },
-  problem: {
-    title: "Tre tool diversi. Lead persi nel mezzo.",
-    body: "Sito fatto due anni fa, lead capture su un form che non parla con niente, CRM su un foglio Google, ads che girano senza che nessuno qualifichi i contatti in arrivo. Risultato: gran parte dei lead muore prima di essere chiamata — non per cattiva volontà, ma perché il sistema è frammentato e nessuno ha il tempo di incollare i pezzi a mano ogni giorno.",
-  },
   pillars: [
     {
       icon: "layers",
