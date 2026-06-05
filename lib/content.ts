@@ -328,3 +328,115 @@ export const CONTACT = {
   instagram: "https://instagram.com/_poweragency_",
   instagramHandle: "@_poweragency_",
 } as const;
+
+/* ============================================================
+   FAQ — sezione home + sezioni per pagina (con FAQPage schema)
+   ============================================================ */
+export type Faq = { q: string; a: string };
+
+export const HOME_FAQ: Faq[] = [
+  {
+    q: "Cosa fa PowerAgency?",
+    a: "PowerAgency costruisce asset digitali che generano clienti: sito, lead generation e CRM in un unico sistema integrato e guidato dall'AI. È un'agenzia che usa gli stessi strumenti sul proprio business — ecommerce e prop firms — prima di proporli ai clienti.",
+  },
+  {
+    q: "Quali servizi offre PowerAgency?",
+    a: "Tre componenti che lavorano insieme: il sito, la lead generation con qualifica AI e un CRM su misura per gestire i contatti. In più PowerSocial per i social. Puoi prenderli come sistema unico o singolarmente.",
+  },
+  {
+    q: "A chi si rivolge PowerAgency?",
+    a: "Ad aziende e professionisti con vendita consulenziale, dove c'è un ciclo lead, preventivo e chiusura: carrozzerie (il verticale più forte), studi dentistici, imprese edili, servizi B2B. E ai singoli imprenditori che vogliono gestire i propri social senza perderci tempo.",
+  },
+  {
+    q: "Cosa rende PowerAgency diversa da un'agenzia tradizionale?",
+    a: "Non vendiamo teoria: usiamo i nostri stessi sistemi ogni giorno sul nostro business — ecommerce gestito fino a 10.000€ al giorno e oltre 120 account prop firm in produzione. Ai clienti proponiamo ciò che già funziona per noi.",
+  },
+  {
+    q: "In quali settori lavorate?",
+    a: "Il verticale più forte sono le carrozzerie, dove abbiamo case study reali. Ma il sistema funziona in qualsiasi settore con vendita consulenziale: studi dentistici, imprese edili, studi professionali e servizi B2B.",
+  },
+  {
+    q: "Quanto costa lavorare con PowerAgency?",
+    a: "Dipende da cosa ti serve. PowerLeads e PowerSocial sono software in abbonamento, con i piani sulle rispettive pagine. Il sito e il CRM su misura si quotano dopo un breve audit: nella prima call ti diamo un range realistico, senza preventivi nebulosi.",
+  },
+];
+
+export const CRM_FAQ: Faq[] = [
+  {
+    q: "Si integra con il mio gestionale?",
+    a: "Dipende dal gestionale. I principali (es. CarroGest, MecPlanet, OneOff) hanno API o export che colleghiamo al CRM via webhook. Se il tuo è custom, lo valutiamo in fase di audit.",
+  },
+  {
+    q: "Per quali settori è disponibile oltre alle carrozzerie?",
+    a: "Il primo verticale pronto è quello delle carrozzerie. Il CRM è però modellabile su qualsiasi settore con flusso lead, preventivo, lavorazione e consegna: apriamo nuovi verticali di continuo.",
+  },
+  {
+    q: "Gestisce più sedi?",
+    a: "Sì. Supporta il multi-sede con routing automatico dei lead per zona e una dashboard di performance separata per ogni sede.",
+  },
+  {
+    q: "Manda promemoria e aggiornamenti su WhatsApp?",
+    a: "Sì. Invia in automatico conferme, promemoria appuntamento e aggiornamenti sullo stato della pratica via email e WhatsApp, al momento giusto.",
+  },
+  {
+    q: "In quanto tempo si attiva?",
+    a: "Tipicamente 2-3 settimane dopo la conferma, calibrato sul tuo flusso. Entro circa 30 giorni dall'inizio sei operativo con il sistema completo.",
+  },
+  {
+    q: "Posso provarlo prima?",
+    a: "Sì, c'è una demo navigabile: te la mostriamo sui numeri reali del primo verticale in una call, senza impegno.",
+  },
+];
+
+export const SOFTWARE_FAQ: Faq[] = [
+  {
+    q: "Da dove estrae i lead PowerLeads?",
+    a: "Da profili Instagram e ricerche su Google Maps. Per ogni lead l'AI (Claude di Anthropic) scrive un icebreaker su misura, e l'outreach parte in automatico: DM via estensione Chrome ed email dal tuo dominio.",
+  },
+  {
+    q: "Serve competenza tecnica per usare PowerLeads?",
+    a: "No. È attivo in cinque minuti, senza competenze tecniche: una sola dashboard al posto di quattro o cinque strumenti separati.",
+  },
+  {
+    q: "Quanto costa PowerLeads?",
+    a: "PowerLeads è in abbonamento unico. Trovi i piani aggiornati sulla sua pagina, powerleads.poweragency.it.",
+  },
+  {
+    q: "In quanto tempo è pronto un sito con PowerLanding?",
+    a: "In 48 ore, garantite. Il sito è scritto a mano e su misura, non da template, con hosting e dominio inclusi.",
+  },
+  {
+    q: "Il codice del sito è mio?",
+    a: "Sì. Con PowerLanding il codice sorgente e il repository restano tuoi, per sempre.",
+  },
+  {
+    q: "Quali social gestisce PowerSocial?",
+    a: "Per ora Instagram, da un'unica dashboard multi-brand: gestisci più account da un posto solo.",
+  },
+  {
+    q: "PowerSocial crea i contenuti o li pubblica soltanto?",
+    a: "Entrambi: crea i contenuti e li pubblica per te, così presidi i social anche se non hai il tempo di produrli e ottimizzarli ogni giorno.",
+  },
+];
+
+export const PROP_FAQ: Faq[] = [
+  {
+    q: "Le prop firms sono un servizio che vendete?",
+    a: "No. La gestione delle prop firm è la nostra operatività interna — oltre 120 account gestiti ogni giorno con software proprietario e hedging automatico. La portiamo come prova di metodo, non come servizio in vendita.",
+  },
+  {
+    q: "Perché parlate di prop firms se non le vendete?",
+    a: "Perché dimostrano il nostro metodo: un edge matematico sistematizzato e automatizzato su oltre 120 account reali. È la stessa mentalità — sistema, non improvvisazione — che applichiamo ai servizi che vendiamo.",
+  },
+];
+
+export const ECOMMERCE_FAQ: Faq[] = [
+  {
+    q: "L'ecommerce è un servizio o la vostra esperienza?",
+    a: "È esperienza operativa reale: store nostri ancora attivi oggi, gestiti fino a 10.000€ al giorno. Non case study del passato, ma operatività quotidiana.",
+  },
+  {
+    q: "Offrite consulenza ecommerce?",
+    a: "Sì: una consulenza 1:1 con chi gestisce store reali fino a 10.000€ al giorno — prodotto, campagne e numeri. Paghi competenza operativa, non teoria.",
+  },
+];

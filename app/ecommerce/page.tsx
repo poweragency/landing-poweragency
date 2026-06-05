@@ -1,8 +1,11 @@
 import PageHero from "@/components/PageHero";
 import VerticalShowcase from "@/components/VerticalShowcase";
 import CTA from "@/components/CTA";
-import { ECOMMERCE } from "@/lib/content";
+import JsonLd from "@/components/JsonLd";
+import Faq from "@/components/Faq";
+import { ECOMMERCE, ECOMMERCE_FAQ } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
+import { faqSchema } from "@/lib/structured-data";
 
 export const metadata = pageMeta({
   title: ECOMMERCE.metaTitle,
@@ -13,6 +16,7 @@ export const metadata = pageMeta({
 export default function EcommercePage() {
   return (
     <main id="top">
+      <JsonLd data={faqSchema(ECOMMERCE_FAQ)} />
       <PageHero
         kicker={ECOMMERCE.kicker}
         title={
@@ -24,6 +28,12 @@ export default function EcommercePage() {
       />
 
       <VerticalShowcase vertical={ECOMMERCE} />
+
+      <Faq
+        title={<>Domande sull&apos;ecommerce</>}
+        items={ECOMMERCE_FAQ}
+        related={[{ label: "Cosa offre PowerAgency", href: "/#faq" }]}
+      />
 
       <div className="pt-4">
         <CTA

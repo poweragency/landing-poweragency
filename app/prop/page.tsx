@@ -1,8 +1,11 @@
 import PageHero from "@/components/PageHero";
 import VerticalShowcase from "@/components/VerticalShowcase";
 import CTA from "@/components/CTA";
-import { PROP } from "@/lib/content";
+import JsonLd from "@/components/JsonLd";
+import Faq from "@/components/Faq";
+import { PROP, PROP_FAQ } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
+import { faqSchema } from "@/lib/structured-data";
 
 export const metadata = pageMeta({
   title: PROP.metaTitle,
@@ -13,6 +16,7 @@ export const metadata = pageMeta({
 export default function PropPage() {
   return (
     <main id="top">
+      <JsonLd data={faqSchema(PROP_FAQ)} />
       <PageHero
         kicker={PROP.kicker}
         title={
@@ -24,6 +28,12 @@ export default function PropPage() {
       />
 
       <VerticalShowcase vertical={PROP} />
+
+      <Faq
+        title={<>Domande sulle prop firms</>}
+        items={PROP_FAQ}
+        related={[{ label: "Cosa offre PowerAgency", href: "/#faq" }]}
+      />
 
       <div className="pt-4">
         <CTA

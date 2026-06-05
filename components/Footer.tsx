@@ -32,6 +32,12 @@ export default function Footer() {
             >
               {CONTACT.email}
             </a>
+            <Link
+              href="/#faq"
+              className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
+            >
+              Domande frequenti
+            </Link>
           </div>
 
           <div>

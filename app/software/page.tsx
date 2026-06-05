@@ -2,9 +2,10 @@ import PageHero from "@/components/PageHero";
 import SoftwareDetail from "@/components/SoftwareDetail";
 import CTA from "@/components/CTA";
 import JsonLd from "@/components/JsonLd";
-import { SOFTWARE } from "@/lib/content";
+import Faq from "@/components/Faq";
+import { SOFTWARE, SOFTWARE_FAQ } from "@/lib/content";
 import { pageMeta } from "@/lib/seo";
-import { serviceSchema } from "@/lib/structured-data";
+import { serviceSchema, faqSchema } from "@/lib/structured-data";
 
 const DESCRIPTION =
   "PowerLeads, PowerSocial e PowerLanding: i software che usiamo ogni giorno sul nostro business prima di portarli fuori. Lead generation, social e siti che convertono.";
@@ -19,12 +20,15 @@ export default function SoftwarePage() {
   return (
     <main id="top">
       <JsonLd
-        data={serviceSchema({
-          name: "Software proprietari PowerAgency",
-          description: DESCRIPTION,
-          path: "/software",
-          serviceType: "Software e siti web AI-powered",
-        })}
+        data={[
+          serviceSchema({
+            name: "Software proprietari PowerAgency",
+            description: DESCRIPTION,
+            path: "/software",
+            serviceType: "Software e siti web AI-powered",
+          }),
+          faqSchema(SOFTWARE_FAQ),
+        ]}
       />
       <PageHero
         kicker="I software proprietari"
@@ -39,6 +43,15 @@ export default function SoftwarePage() {
       {SOFTWARE.map((s) => (
         <SoftwareDetail key={s.slug} software={s} />
       ))}
+
+      <Faq
+        title={<>Domande sui software</>}
+        items={SOFTWARE_FAQ}
+        related={[
+          { label: "Il CRM su misura", href: "/crm" },
+          { label: "Vai a PowerLeads", href: "https://powerleads.poweragency.it", external: true },
+        ]}
+      />
 
       <div className="pt-8">
         <CTA
