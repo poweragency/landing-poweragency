@@ -98,6 +98,8 @@ export const SOFTWARE: Software[] = [
       "Programmazione e pubblicazione dei contenuti",
       "Un solo flusso di lavoro, niente strumenti sparsi",
     ],
+    audience:
+      "Agenzie, creator e brand che gestiscono più account social e vogliono pianificare e pubblicare i contenuti da un'unica dashboard.",
     url: "https://powersocial.poweragency.it",
     ctaLabel: "Vai a PowerSocial",
   },
