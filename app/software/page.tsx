@@ -50,6 +50,7 @@ export default function SoftwarePage() {
         related={[
           { label: "Il CRM su misura", href: "/crm" },
           { label: "Vai a PowerLeads", href: "https://powerleads.poweragency.it", external: true },
+          { label: "Sfoglia lo shop", href: "https://shop.poweragency.it", external: true },
         ]}
       />
 

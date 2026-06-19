@@ -120,6 +120,7 @@ export default function EcosistemaPage() {
         related={[
           { label: "Il CRM su misura", href: "/crm" },
           { label: "I nostri software", href: "/software" },
+          { label: "Sfoglia lo shop", href: "https://shop.poweragency.it", external: true },
         ]}
       />
 
