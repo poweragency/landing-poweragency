@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { href: "/crm", label: "CRM" },
   { href: "/prop", label: "Prop" },
   { href: "/ecommerce", label: "Ecommerce" },
+  { href: "/shop", label: "Shop" },
 ] as const;
 
 export type Stat = {
