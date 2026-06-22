@@ -22,9 +22,9 @@ const ECOM = resolve(LANDING, "..", "POWERAGENCY ECOM", "web");
 
 const SRC = join(LANDING, "public", "brand", "source", "logo-master.jpeg");
 
-// Bounding box del solo monogramma "PAI" (+ nodo AI) dentro il logo 1290x680.
-// Calibrato visivamente: include P, A, I e il nodo neurale in alto a destra.
-const MARK_BBOX = { left: 430, top: 90, width: 500, height: 380 };
+// Bounding box dentro il logo master 1290x680 (calibrati visivamente):
+const MARK_BBOX = { left: 430, top: 90, width: 500, height: 380 }; // monogramma "PAI" + nodo AI
+const WORD_BBOX = { left: 165, top: 470, width: 965, height: 180 }; // wordmark "POWER AGENCY" + payoff
 
 const DARK = "#0a0606"; // base scura di brand
 // Soglia alta: rimuove anche la vignette scura attorno al monogramma (non solo
@@ -43,18 +43,44 @@ async function exists(p) {
 //   - poi trim del bordo trasparente per stringere al contenuto.
 const KEY_LO = 26;  // sotto questa luminanza → totalmente trasparente (sfondo)
 const KEY_HI = 78;  // sopra → totalmente opaco (metallo/nodo); in mezzo, rampa
-async function markKeyed() {
-  const crop = await sharp(SRC).extract(MARK_BBOX).removeAlpha().png().toBuffer();
-  const slope = 255 / (KEY_HI - KEY_LO);
+
+// Ritaglia una regione del master e ne rende TRASPARENTE lo sfondo scuro (alpha da
+// luminanza), poi trimma il bordo trasparente. Riusato per monogramma e wordmark.
+async function keyedRegion(bbox, lo, hi) {
+  const crop = await sharp(SRC).extract(bbox).removeAlpha().png().toBuffer();
+  const slope = 255 / (hi - lo);
   const alpha = await sharp(crop)
     .grayscale()
-    .linear(slope, -KEY_LO * slope)
+    .linear(slope, -lo * slope)
     .toColourspace("b-w")
     .png()
     .toBuffer();
   const keyed = await sharp(crop).joinChannel(alpha).png().toBuffer();
-  // trim del bordo ora trasparente
   return sharp(keyed).trim({ threshold: 1 }).png().toBuffer();
+}
+
+// Monogramma "PAI" keyed (per le icone quadrate).
+async function markKeyed() {
+  return keyedRegion(MARK_BBOX, KEY_LO, KEY_HI);
+}
+
+// Lockup ORIZZONTALE per gli header: monogramma a sinistra + wordmark "POWER AGENCY"
+// (+ payoff) a destra, sfondo trasparente. È il formato giusto per una barra compatta:
+// la scritta resta leggibile a ~40px d'altezza, dove il logo impilato la rende illeggibile.
+async function horizontalLockup(H) {
+  const mono = await sharp(await keyedRegion(MARK_BBOX, KEY_LO, KEY_HI)).resize({ height: H }).png().toBuffer();
+  const mm = await sharp(mono).metadata();
+  const word = await sharp(await keyedRegion(WORD_BBOX, 16, 72)).resize({ height: Math.round(H * 0.62) }).png().toBuffer();
+  const wm = await sharp(word).metadata();
+  const gap = Math.round(H * 0.09);
+  const W = mm.width + gap + wm.width;
+  return sharp({ create: { width: W, height: H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+    .composite([
+      { input: mono, left: 0, top: 0 },
+      { input: word, left: mm.width + gap, top: Math.round((H - wm.height) / 2) },
+    ])
+    .png({ compressionLevel: 9, palette: true, quality: 90 })
+    .toBuffer();
 }
 
 // Logo completo (lockup) trimmato dal nero esterno, alla larghezza richiesta.
@@ -70,8 +96,8 @@ async function fullLogoKeyed(width) {
   const trimmed = await sharp(SRC).trim({ background: "#000000", threshold: 28 }).resize({ width }).png().toBuffer();
   const lo = 16, hi = 72, slope = 255 / (hi - lo);
   const alpha = await sharp(trimmed).grayscale().linear(slope, -lo * slope).toColourspace("b-w").png().toBuffer();
-  // 640px = nitido fino a ~retina nell'header (mostrato ~48px); compresso per il web.
-  return sharp(trimmed).removeAlpha().joinChannel(alpha).png({ compressionLevel: 9 }).toBuffer();
+  // 640px = nitido fino a ~retina; quantizzato (palette) per stare leggero sul web.
+  return sharp(trimmed).removeAlpha().joinChannel(alpha).png({ compressionLevel: 9, palette: true, quality: 90 }).toBuffer();
 }
 
 // Sfondo scuro con glow caldo radiale dietro il mark: riprende l'illuminazione
@@ -160,7 +186,9 @@ async function buildLanding() {
   console.log("Landing (poweragency.it):");
   const pub = join(LANDING, "public");
   const app = join(LANDING, "app");
-  // Logo completo (lockup PAI + wordmark) trasparente: header/footer + JSON-LD
+  // Logo orizzontale (monogramma + wordmark) trasparente: header/footer
+  await write(join(pub, "brand", "logo-horizontal.png"), await horizontalLockup(240));
+  // Logo completo impilato trasparente: JSON-LD (+ usi dove serve il lockup verticale)
   await write(join(pub, "brand", "logo.png"), await fullLogoKeyed(640));
   // Set icone PWA
   await write(join(pub, "icon-192.png"), await squareIcon(192, 0.76));
@@ -180,6 +208,7 @@ async function buildEcom() {
   }
   console.log("Shop ecom (shop.poweragency.it):");
   const pub = join(ECOM, "public");
+  await write(join(pub, "brand", "logo-horizontal.png"), await horizontalLockup(240));
   await write(join(pub, "brand", "logo.png"), await fullLogoKeyed(640));
   await write(join(pub, "favicon.png"), await squareIcon(256, 0.82, { rounded: true }));
   await write(join(pub, "icon-192.png"), await squareIcon(192, 0.76));
