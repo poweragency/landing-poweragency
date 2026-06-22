@@ -41,7 +41,7 @@ export default function CTA({
             className="pointer-events-none absolute -top-1/2 left-1/2 h-[500px] w-[700px] -translate-x-1/2"
             style={{
               background:
-                "radial-gradient(ellipse at center, rgba(244,115,32,0.3), transparent 70%)",
+                "radial-gradient(ellipse at center, rgba(202,111,42,0.3), transparent 70%)",
             }}
           />
 
@@ -60,7 +60,7 @@ export default function CTA({
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3.5">
             <MagneticButton
               onClick={() => setOpen(true)}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(232,67,31,0.55)]"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(168,64,26,0.55)]"
             >
               {primaryLabel}
               <span className="transition-transform duration-300 group-hover:translate-x-1">

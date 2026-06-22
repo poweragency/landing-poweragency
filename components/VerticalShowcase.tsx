@@ -51,7 +51,7 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
                 transition={{ duration: 0.7, delay: (i % 2) * 0.1, ease: EASE }}
               >
                 <TiltCard className="h-full">
-                  <article className="ring-grad flex h-full flex-col rounded-[18px] border border-line bg-gradient-to-b from-surface to-bg p-8 transition-shadow duration-300 hover:shadow-[0_24px_50px_-24px_rgba(232,67,31,0.4)]">
+                  <article className="ring-grad flex h-full flex-col rounded-[18px] border border-line bg-gradient-to-b from-surface to-bg p-8 transition-shadow duration-300 hover:shadow-[0_24px_50px_-24px_rgba(168,64,26,0.4)]">
                     <div className="mb-5 grid h-14 w-14 place-items-center rounded-[14px] border border-line-strong bg-orange/10">
                       <Icon name={f.icon} className="h-6 w-6 text-orange" />
                     </div>
@@ -82,7 +82,7 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
                 transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
               >
                 <TiltCard className="h-full">
-                  <div className="ring-grad relative h-full rounded-[18px] border border-line bg-surface p-7 transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(244,115,32,0.45)]">
+                  <div className="ring-grad relative h-full rounded-[18px] border border-line bg-surface p-7 transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(202,111,42,0.45)]">
                     <span className="grad-text font-head text-[2.4rem] font-bold leading-none">
                       {w.step}
                     </span>
@@ -107,7 +107,7 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
             className="relative overflow-hidden rounded-[26px] border border-line-strong p-[clamp(32px,5vw,64px)] text-center"
             style={{
               background:
-                "radial-gradient(circle at 100% 0%, rgba(232,67,31,0.16), transparent 55%), radial-gradient(circle at 0% 100%, rgba(244,115,32,0.14), transparent 55%), #16100d",
+                "radial-gradient(circle at 100% 0%, rgba(168,64,26,0.16), transparent 55%), radial-gradient(circle at 0% 100%, rgba(202,111,42,0.14), transparent 55%), #16100d",
             }}
           >
             <p className="mx-auto max-w-[22ch] font-head text-[clamp(1.6rem,4vw,2.8rem)] font-bold leading-[1.12] tracking-[-0.02em]">
@@ -117,7 +117,7 @@ export default function VerticalShowcase({ vertical }: { vertical: Vertical }) {
             <div className="mt-9 flex flex-col items-center gap-4">
               <div className="flex items-center gap-4">
                 <div className="relative grid h-[60px] w-[60px] place-items-center rounded-full">
-                  <span className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full [background:conic-gradient(from_140deg,#ffb347,#e8431f,#b8431a,#ffb347)]" />
+                  <span className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full [background:conic-gradient(from_140deg,#f6a64a,#a8401a,#7e2f0e,#f6a64a)]" />
                   <span className="absolute inset-[3px] grid place-items-center overflow-hidden rounded-full bg-surface-2 font-head text-[1.1rem] font-bold">
                     {vertical.owner.photo ? (
                       // eslint-disable-next-line @next/next/no-img-element

@@ -13,13 +13,13 @@
   --color-mut: #b6a79d;
   --color-dim: #7c6f67;
 
-  --color-amber: #ffb347;
-  --color-orange: #f47320;
-  --color-red: #e8431f;
-  --color-deep: #b8431a;
+  --color-amber: #f6a64a;
+  --color-orange: #ca6f2a;
+  --color-red: #a8401a;
+  --color-deep: #7e2f0e;
 
   --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 138, 61, 0.28);
+  --color-line-strong: rgba(202, 111, 42, 0.28);
 
   --font-head: var(--font-space-grotesk), system-ui, sans-serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
@@ -58,7 +58,7 @@ body {
    UTILITIES
    ============================================================ */
 .grad-text {
-  background: linear-gradient(120deg, #ffb347 0%, #f47320 42%, #e8431f 100%);
+  background: linear-gradient(120deg, #f6a64a 0%, #ca6f2a 42%, #a8401a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -79,7 +79,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(120deg, #ffb347, #f47320 45%, #e8431f);
+  background: linear-gradient(120deg, #f6a64a, #ca6f2a 45%, #a8401a);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

@@ -79,7 +79,7 @@ export default function Nav() {
         <div className="hidden md:block">
           <MagneticButton
             href="#contatti"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber via-orange to-red px-5 py-2.5 font-head text-[0.9rem] font-semibold text-[#1a0a03] shadow-[0_8px_30px_-8px_rgba(232,67,31,0.5)]"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber via-orange to-red px-5 py-2.5 font-head text-[0.9rem] font-semibold text-[#1a0a03] shadow-[0_8px_30px_-8px_rgba(168,64,26,0.5)]"
           >
             Prenota una call <span aria-hidden>→</span>
           </MagneticButton>

@@ -17,7 +17,7 @@ export default function CaseStudy() {
           className="relative overflow-hidden rounded-[26px] border border-line-strong p-[clamp(36px,6vw,72px)]"
           style={{
             background:
-              "radial-gradient(circle at 100% 0%, rgba(232,67,31,0.16), transparent 55%), radial-gradient(circle at 0% 100%, rgba(244,115,32,0.14), transparent 55%), #16100d",
+              "radial-gradient(circle at 100% 0%, rgba(168,64,26,0.16), transparent 55%), radial-gradient(circle at 0% 100%, rgba(202,111,42,0.14), transparent 55%), #16100d",
           }}
         >
           <span className="font-head text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-orange">

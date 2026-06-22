@@ -37,7 +37,7 @@ export default function CrmPage() {
           <MagneticButton
             href={CRM.url}
             newTab
-            className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(232,67,31,0.55)]"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(168,64,26,0.55)]"
           >
             Prova in demo
             <span className="transition-transform duration-300 group-hover:translate-x-1">
