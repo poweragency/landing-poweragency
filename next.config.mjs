@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["three"],
   async redirects() {
     return [
       // Lo shop è un'app separata su shop.poweragency.it. /shop dà un ingresso

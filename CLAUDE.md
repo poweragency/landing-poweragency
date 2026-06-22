@@ -18,14 +18,14 @@
 - **Git su share SMB:** "dubious ownership" → prima di operare: `git config --global --add safe.directory "<path>"`.
 - **`tsc`/build locale lentissimi su SMB:** non aspettarli all'infinito, pusha e lascia il check a Vercel.
 - **Next.js 16:** `params` di pagine/route è una `Promise` (va `await`). Doc offline in `node_modules/next/dist/docs/`.
-- Alias `@/*` → root del progetto (niente `src/`): tutto in `app/`, `components/`, `lib/`. `three` va in `transpilePackages`.
+- Alias `@/*` → root del progetto (niente `src/`): tutto in `app/`, `components/`, `lib/`.
 
 ## Convenzioni (IMPORTANT, segui per coerenza)
 - **Contenuti SEMPRE in `lib/content.ts`** (NAV_LINKS, STATS, SOFTWARE, CRM, ECOSISTEMA, `*_FAQ`, CONTACT…). Mai hardcodare copy sparso nelle pagine.
 - **SEO per pagina:** `export const metadata = pageMeta({ title, description, path })` da `lib/seo.ts` → canonical self-ref + OG + Twitter. La home usa i default in `app/layout.tsx`. Host canonico = `www.poweragency.it`.
 - **Structured data:** `<JsonLd data={...} />` coi builder di `lib/structured-data.ts`. `Organization` è site-wide (nel layout); le pagine aggiungono `Service`/`FAQPage`/`WebSite`.
 - **Immagine OG:** statica `public/og.png` (logo PAI su glow scuro, 1200x630), referenziata come `/og.png` da `OG_IMAGE` in `lib/seo.ts` (NON via convenzione file `opengraph-image`, altrimenti gli override per-pagina la perdono). Rigenerabile con `scripts/brand/gen-assets.mjs`.
-- **Le pagine sono server component** (esportano `metadata`): NON usare `motion`/hook direttamente → wrappa in `Reveal`/`TiltCard` (client).
+- **Le pagine sono server component** (esportano `metadata`): NON usare `motion`/hook direttamente → wrappa la logica client in `Reveal` (client). `TiltCard` e `MagneticButton` sono wrapper **statici** (vedi Brand): mantengono l'API ma non hanno più effetti legati al mouse.
 - **Pattern pagina-servizio (asciutto):** `PageHero` → 1-2 sezioni (`SectionHead` + griglia `TiltCard`) → `Faq` → `CTA`. **Niente contenuti duplicati tra pagine** (es. `CaseStudy` sta solo su `/crm`).
 
 ## Regole di contenuto (YOU MUST)
@@ -36,6 +36,8 @@
 
 ## Brand
 Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivato: `public/brand/logo.png` = **lockup completo a sfondo trasparente**, usato così com'è (niente testo HTML affiancato) nell'header/footer da `components/Logo.tsx` e in JSON-LD. Palette: base scuro `#0a0606`, accento arancio `#ff6a1a` (gradient amber→red), font Space Grotesk (`font-head`) + Inter.
+
+**Sfondo statico (rebrand 22/06/2026, allineato a shop.poweragency.it):** `components/Background.tsx` è un solo gradiente "fuoco" radiale fisso su `#0a0606` — **niente WebGL/three.js, niente particelle, niente griglia, niente cursore custom, niente effetti legati al mouse**. Sono stati rimossi `AuroraBackground`/`CustomCursor` (+ deps `three`, `@react-three/fiber`, `@react-three/drei`) e neutralizzati `MagneticButton`/`TiltCard` (API intatta, solo hover/press sobri). Regola brand: lo sfondo resta **scuro e statico** come lo shop.
 
 ## Icone, OG e manifest (logo PAI dal 22/06/2026)
 

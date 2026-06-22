@@ -54,15 +54,6 @@ body {
   color: #1a0d05;
 }
 
-/* hide default cursor when custom cursor is active (desktop only) */
-@media (hover: hover) and (pointer: fine) {
-  body.has-custom-cursor,
-  body.has-custom-cursor a,
-  body.has-custom-cursor button {
-    cursor: none;
-  }
-}
-
 /* ============================================================
    UTILITIES
    ============================================================ */

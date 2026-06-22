@@ -1,60 +1,37 @@
 "use client";
 
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useReducedMotion,
-} from "framer-motion";
-import { useRef, type ReactNode, type MouseEvent } from "react";
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
   href?: string;
   onClick?: () => void;
   className?: string;
+  /** @deprecated effetto magnetico rimosso (rebrand statico): prop ignorata. */
   strength?: number;
   ariaLabel?: string;
   block?: boolean;
   newTab?: boolean;
 };
 
+// Rebrand statico (allineato allo shop): niente attrazione magnetica al mouse.
+// Resta un semplice feedback di pressione + gli hover CSS gia' sulle classi.
+// API invariata cosi' i call-site non cambiano.
 export default function MagneticButton({
   children,
   href,
   onClick,
   className,
-  strength = 0.4,
   ariaLabel,
   block = false,
   newTab = false,
 }: Props) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const reduce = useReducedMotion();
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, { stiffness: 250, damping: 18, mass: 0.4 });
-  const sy = useSpring(y, { stiffness: 250, damping: 18, mass: 0.4 });
-
-  function handleMove(e: MouseEvent) {
-    if (reduce || !ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    x.set((e.clientX - (rect.left + rect.width / 2)) * strength);
-    y.set((e.clientY - (rect.top + rect.height / 2)) * strength);
-  }
-
-  function reset() {
-    x.set(0);
-    y.set(0);
-  }
-
   const inner = href ? (
     <a
       href={href}
       onClick={onClick}
       aria-label={ariaLabel}
-      data-cursor="hover"
       className={className}
       target={newTab ? "_blank" : undefined}
       rel={newTab ? "noopener noreferrer" : undefined}
@@ -66,7 +43,6 @@ export default function MagneticButton({
       type="button"
       onClick={onClick}
       aria-label={ariaLabel}
-      data-cursor="hover"
       className={className}
     >
       {children}
@@ -75,12 +51,7 @@ export default function MagneticButton({
 
   return (
     <motion.span
-      ref={ref}
-      onMouseMove={handleMove}
-      onMouseLeave={reset}
       style={{
-        x: sx,
-        y: sy,
         display: block ? "flex" : "inline-flex",
         width: block ? "100%" : undefined,
       }}
