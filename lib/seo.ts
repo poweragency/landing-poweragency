@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://www.poweragency.it";
 
-// Brand OG card served by app/og/route.tsx. Referenced explicitly (not via the
-// opengraph-image file convention) so the image survives per-page openGraph
-// overrides instead of being dropped.
+// Brand OG card (1200x630) statica: public/og.png, generata dal logo ufficiale
+// PAI via scripts/brand/gen-assets.mjs. Referenziata esplicitamente (non via la
+// convention opengraph-image) così l'immagine sopravvive agli override openGraph
+// per-pagina invece di essere scartata.
 export const OG_IMAGE = {
-  url: "/og",
+  url: "/og.png",
   width: 1200,
   height: 630,
   alt: "PowerAgency — sistemi AI per generare clienti",

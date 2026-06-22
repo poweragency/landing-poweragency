@@ -24,7 +24,7 @@
 - **Contenuti SEMPRE in `lib/content.ts`** (NAV_LINKS, STATS, SOFTWARE, CRM, ECOSISTEMA, `*_FAQ`, CONTACT…). Mai hardcodare copy sparso nelle pagine.
 - **SEO per pagina:** `export const metadata = pageMeta({ title, description, path })` da `lib/seo.ts` → canonical self-ref + OG + Twitter. La home usa i default in `app/layout.tsx`. Host canonico = `www.poweragency.it`.
 - **Structured data:** `<JsonLd data={...} />` coi builder di `lib/structured-data.ts`. `Organization` è site-wide (nel layout); le pagine aggiungono `Service`/`FAQPage`/`WebSite`.
-- **Immagine OG:** generata da `app/og/route.tsx`, referenziata come `/og` (NON via convenzione file `opengraph-image`, altrimenti gli override per-pagina la perdono).
+- **Immagine OG:** statica `public/og.png` (logo PAI su glow scuro, 1200x630), referenziata come `/og.png` da `OG_IMAGE` in `lib/seo.ts` (NON via convenzione file `opengraph-image`, altrimenti gli override per-pagina la perdono). Rigenerabile con `scripts/brand/gen-assets.mjs`.
 - **Le pagine sono server component** (esportano `metadata`): NON usare `motion`/hook direttamente → wrappa in `Reveal`/`TiltCard` (client).
 - **Pattern pagina-servizio (asciutto):** `PageHero` → 1-2 sezioni (`SectionHead` + griglia `TiltCard`) → `Faq` → `CTA`. **Niente contenuti duplicati tra pagine** (es. `CaseStudy` sta solo su `/crm`).
 
@@ -35,12 +35,17 @@
 - Il case carrozzeria resta **anonimo** (mai nome/città). Carrozzerie/dentisti/edili NON sono verticali da spingere come pagine dedicate.
 
 ## Brand
-Email `info@poweragency.it` · IG `@_poweragency_` · logo `public/brand/logo.png` · palette: base scuro `#0a0606`, accento arancio `#ff6a1a` (gradient amber→red), font Space Grotesk (`font-head`) + Inter.
+Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivati: `public/brand/logo.png` (lockup completo, usato in JSON-LD) e `public/brand/mark.png` (solo monogramma, usato nell'header da `components/Logo.tsx`). Palette: base scuro `#0a0606`, accento arancio `#ff6a1a` (gradient amber→red), font Space Grotesk (`font-head`) + Inter.
 
-## Icone e manifest (12/06/2026)
+## Icone, OG e manifest (logo PAI dal 22/06/2026)
 
-Set generato dal logo tondo (`public/brand/logo.png`): `public/icon-192.png`, `icon-512.png`,
-`icon-maskable-512.png` (su sfondo nero opaco) + `app/icon.png` (favicon via convention,
-sostituisce il vecchio `icons:{}` esplicito nel metadata) e `app/apple-icon.png` (180, su nero).
-`app/manifest.ts` è **light** (display `browser`): sito vetrina, niente PWA standalone/sw.js.
-Pattern: `Z:\SECOND-BRAIN\sources\stack\pattern-icone-pwa-progetto.md`.
+**Tutti** gli asset di brand derivano dal master `public/brand/source/logo-master.jpeg`
+e si rigenerano con **`node scripts/brand/gen-assets.mjs`** (richiede `sharp`, già dipendenza
+del progetto). Lo script scrive anche nel repo sibling `POWERAGENCY ECOM/web` se presente
+accanto (Z:\SAAS), così landing e shop restano allineati allo stesso logo.
+
+Set: `public/icon-192.png`, `icon-512.png`, `icon-maskable-512.png` (monogramma su glow scuro;
+maskable con safe-area ampia) + `app/icon.png` (favicon via convention, sostituisce il vecchio
+`icons:{}` esplicito nel metadata) + `app/apple-icon.png` (180) + `public/brand/mark.png` (header)
++ `public/og.png` (OG 1200x630). `app/manifest.ts` è **light** (display `browser`): sito vetrina,
+niente PWA standalone/sw.js. Pattern icone: `Z:\SECOND-BRAIN\sources\stack\pattern-icone-pwa-progetto.md`.
