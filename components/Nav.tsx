@@ -41,10 +41,10 @@ export default function Nav() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: EASE }}
-      // sfondo nero pieno: coerente con l'header dello shop e col brand scuro statico.
-      // Il logo (/brand/logo-horizontal.png) è trasparente, quindi si fonde col nero.
-      className={`fixed inset-x-0 top-0 z-[120] bg-black transition-colors duration-300 ${
-        scrolled ? "border-b border-line" : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-[120] transition-colors duration-300 ${
+        scrolled
+          ? "border-b border-line bg-bg/70 backdrop-blur-xl backdrop-saturate-150"
+          : "border-b border-transparent"
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between gap-6 px-6">
