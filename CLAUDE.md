@@ -52,3 +52,7 @@ maskable con safe-area ampia) + `app/icon.png` (favicon via convention, sostitui
 (header/footer) + `public/brand/logo.png` (impilato, JSON-LD) + `public/og.png` (OG 1200x630).
 `app/manifest.ts` è **light** (display `browser`): sito vetrina,
 niente PWA standalone/sw.js. Pattern icone: `Z:\SECOND-BRAIN\sources\stack\pattern-icone-pwa-progetto.md`.
+
+**Asset social/manuali** (non usati dal sito): `node scripts/brand/ig-profile.mjs` genera la foto
+profilo Instagram (1080×1080, monogramma nell'area sicura del cerchio) in `Z:\SAAS\5.loghi pa\`,
+dove c'è anche il set export `PA-*.png` (logo orizzontale/verticale, monogramma, icona, OG) accanto al master.

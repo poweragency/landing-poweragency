@@ -9,6 +9,45 @@ import Icon from "./Icon";
 
 function VisualPanel({ software }: { software: Software }) {
   const soon = software.status === "soon";
+
+  // Con copertina: immagine reale (la stessa dello shop) a tutto riquadro, con
+  // scrim in basso per la leggibilità di nome + headline / badge "coming soon".
+  if (software.cover) {
+    return (
+      <div className="ring-grad relative aspect-[16/10] overflow-hidden rounded-[22px] border border-line-strong">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={software.cover}
+          alt={`Copertina ${software.name}`}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(10,6,6,0.92) 0%, rgba(10,6,6,0.45) 32%, transparent 60%)",
+          }}
+        />
+        <div className="absolute inset-x-0 bottom-0 p-7">
+          <p className="font-head text-[1.5rem] font-bold tracking-tight">
+            {software.name}
+          </p>
+          {soon ? (
+            <span className="mt-2 inline-block rounded-full border border-line-strong bg-black/30 px-4 py-1.5 font-head text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-amber">
+              Coming soon
+            </span>
+          ) : (
+            <p className="mt-1.5 grad-text font-head text-[0.95rem] font-semibold uppercase tracking-[0.12em]">
+              {software.headline}
+            </p>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // Fallback senza copertina: placeholder brandizzato con icona animata.
   return (
     <div
       className="ring-grad relative aspect-[4/3] overflow-hidden rounded-[22px] border border-line-strong"

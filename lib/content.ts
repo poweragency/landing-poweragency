@@ -53,6 +53,8 @@ export type Software = {
   tag: string;
   status: SoftwareStatus;
   icon: string;
+  /** Copertina prodotto (16:10) condivisa con lo shop, in public/products/<slug>.jpg */
+  cover?: string;
   headline: string;
   description: string;
   features: string[];
@@ -70,6 +72,7 @@ export const SOFTWARE: Software[] = [
     tag: "SaaS · Lead Generation",
     status: "live",
     icon: "magnet",
+    cover: "/products/powerleads.jpg",
     headline: "Un sistema. Non cinque tool.",
     description:
       "La piattaforma all-in-one per l'acquisizione clienti. Estrae lead da Instagram e Google Maps, scrive icebreaker su misura con l'AI e invia DM ed email in automatico. Una dashboard, un abbonamento — al posto di cinque strumenti scollegati da 200-400€ al mese.",
@@ -92,6 +95,7 @@ export const SOFTWARE: Software[] = [
     tag: "SaaS · Social media",
     status: "live",
     icon: "send",
+    cover: "/products/powersocial.jpg",
     headline: "Tutti i social, una dashboard.",
     description:
       "La dashboard multi-brand per gestire i social da un posto solo: organizzi, programmi e pubblichi i contenuti senza saltare da un tool all'altro. Pensata per chi cura più account e non vuole perdere tempo.",
@@ -112,6 +116,7 @@ export const SOFTWARE: Software[] = [
     tag: "Servizio · Siti web",
     status: "live",
     icon: "rocket",
+    cover: "/products/powerlanding.jpg",
     headline: "Sito su misura in 48 ore.",
     description:
       "Un sito su misura, disegnato e scritto a mano: nessun template. Copy che converte, codice curato riga per riga, hosting e dominio inclusi. Online in 48 ore, garantite.",
