@@ -147,7 +147,7 @@ export default function LeadModal({
             className="relative w-full max-w-[460px] overflow-hidden rounded-[22px] border border-line-strong p-[clamp(24px,5vw,40px)] text-center"
             style={{
               background:
-                "radial-gradient(circle at 100% 0%, rgba(255,122,24,0.16), transparent 55%), #16100d",
+                "radial-gradient(circle at 100% 0%, rgba(244,115,32,0.16), transparent 55%), #16100d",
             }}
             initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -248,7 +248,7 @@ export default function LeadModal({
                     type="submit"
                     disabled={status === "loading"}
                     data-cursor="hover"
-                    className="mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(255,45,45,0.55)] transition-opacity disabled:opacity-60"
+                    className="mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(232,67,31,0.55)] transition-opacity disabled:opacity-60"
                   >
                     {status === "loading" ? "Invio…" : "Invia richiesta"}
                   </button>

@@ -47,7 +47,7 @@ export default function EcosistemaPage() {
       >
         <MagneticButton
           href="#contatti"
-          className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(255,45,45,0.55)]"
+          className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(232,67,31,0.55)]"
         >
           Prenota una call
           <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -69,7 +69,7 @@ export default function EcosistemaPage() {
             {ECOSISTEMA.pillars.map((p, i) => (
               <Reveal key={p.title} delay={(i % 3) * 0.1}>
                 <TiltCard className="h-full">
-                  <article className="ring-grad flex h-full flex-col rounded-[18px] border border-line bg-gradient-to-b from-surface to-bg p-8 transition-shadow duration-300 hover:shadow-[0_24px_50px_-24px_rgba(255,45,45,0.4)]">
+                  <article className="ring-grad flex h-full flex-col rounded-[18px] border border-line bg-gradient-to-b from-surface to-bg p-8 transition-shadow duration-300 hover:shadow-[0_24px_50px_-24px_rgba(232,67,31,0.4)]">
                     <div className="mb-5 grid h-14 w-14 place-items-center rounded-[14px] border border-line-strong bg-orange/10">
                       <Icon name={p.icon} className="h-6 w-6 text-orange" />
                     </div>
@@ -98,7 +98,7 @@ export default function EcosistemaPage() {
             {ECOSISTEMA.process.map((s, i) => (
               <Reveal key={s.step} delay={i * 0.1}>
                 <TiltCard className="h-full">
-                  <div className="ring-grad relative h-full rounded-[18px] border border-line bg-surface p-7 transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(255,122,24,0.45)]">
+                  <div className="ring-grad relative h-full rounded-[18px] border border-line bg-surface p-7 transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(244,115,32,0.45)]">
                     <span className="grad-text font-head text-[2.4rem] font-bold leading-none">
                       {s.step}
                     </span>

@@ -8,7 +8,7 @@ export default function Background() {
       className="pointer-events-none fixed inset-0 -z-10"
       style={{
         background:
-          "radial-gradient(ellipse 70% 50% at 50% -10%, rgba(255,122,24,0.22), transparent 60%), radial-gradient(ellipse 50% 50% at 90% 40%, rgba(255,45,45,0.12), transparent 60%), #0a0606",
+          "radial-gradient(ellipse 70% 50% at 50% -10%, rgba(244,115,32,0.22), transparent 60%), radial-gradient(ellipse 50% 50% at 90% 40%, rgba(232,67,31,0.12), transparent 60%), #0a0606",
       }}
     />
   );

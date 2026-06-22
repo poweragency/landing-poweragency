@@ -17,9 +17,9 @@ function PersonCard({ person, delay }: { person: Person; delay: number }) {
       transition={{ duration: 0.7, delay, ease: EASE }}
     >
       <TiltCard className="h-full">
-        <article className="ring-grad h-full rounded-[18px] border border-line bg-surface p-10 text-center transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(255,122,24,0.5)]">
+        <article className="ring-grad h-full rounded-[18px] border border-line bg-surface p-10 text-center transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(244,115,32,0.5)]">
           <div className="relative mx-auto mb-5 grid h-[86px] w-[86px] place-items-center rounded-full">
-            <span className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full [background:conic-gradient(from_140deg,#ffb347,#ff2d2d,#c4161c,#ffb347)]" />
+            <span className="absolute inset-0 animate-[spin_8s_linear_infinite] rounded-full [background:conic-gradient(from_140deg,#ffb347,#e8431f,#b8431a,#ffb347)]" />
             <span className="absolute inset-[3px] grid place-items-center overflow-hidden rounded-full bg-surface-2 font-head text-[1.5rem] font-bold">
               {person.photo ? (
                 // eslint-disable-next-line @next/next/no-img-element

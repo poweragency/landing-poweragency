@@ -53,7 +53,7 @@ function VisualPanel({ software }: { software: Software }) {
       className="ring-grad relative aspect-[4/3] overflow-hidden rounded-[22px] border border-line-strong"
       style={{
         background:
-          "radial-gradient(circle at 80% 0%, rgba(255,45,45,0.18), transparent 55%), radial-gradient(circle at 0% 100%, rgba(255,122,24,0.16), transparent 55%), #16100d",
+          "radial-gradient(circle at 80% 0%, rgba(232,67,31,0.18), transparent 55%), radial-gradient(circle at 0% 100%, rgba(244,115,32,0.16), transparent 55%), #16100d",
       }}
     >
       {/* grid texture */}
@@ -189,7 +189,7 @@ export default function SoftwareDetail({ software }: { software: Software }) {
               <MagneticButton
                 href={software.url}
                 newTab
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(255,45,45,0.55)]"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber via-orange to-red px-7 py-4 font-head text-base font-semibold text-[#1a0a03] shadow-[0_10px_40px_-8px_rgba(232,67,31,0.55)]"
               >
                 {software.ctaLabel}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
