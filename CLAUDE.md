@@ -35,7 +35,7 @@
 - Il case carrozzeria resta **anonimo** (mai nome/città). Carrozzerie/dentisti/edili NON sono verticali da spingere come pagine dedicate.
 
 ## Brand
-Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivati: `public/brand/logo.png` (lockup completo, usato in JSON-LD) e `public/brand/mark.png` (solo monogramma, usato nell'header da `components/Logo.tsx`). Palette: base scuro `#0a0606`, accento arancio `#ff6a1a` (gradient amber→red), font Space Grotesk (`font-head`) + Inter.
+Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivato: `public/brand/logo.png` = **lockup completo a sfondo trasparente**, usato così com'è (niente testo HTML affiancato) nell'header/footer da `components/Logo.tsx` e in JSON-LD. Palette: base scuro `#0a0606`, accento arancio `#ff6a1a` (gradient amber→red), font Space Grotesk (`font-head`) + Inter.
 
 ## Icone, OG e manifest (logo PAI dal 22/06/2026)
 
@@ -46,6 +46,6 @@ accanto (Z:\SAAS), così landing e shop restano allineati allo stesso logo.
 
 Set: `public/icon-192.png`, `icon-512.png`, `icon-maskable-512.png` (monogramma su glow scuro;
 maskable con safe-area ampia) + `app/icon.png` (favicon via convention, sostituisce il vecchio
-`icons:{}` esplicito nel metadata) + `app/apple-icon.png` (180) + `public/brand/mark.png` (header)
-+ `public/og.png` (OG 1200x630). `app/manifest.ts` è **light** (display `browser`): sito vetrina,
+`icons:{}` esplicito nel metadata) + `app/apple-icon.png` (180) + `public/brand/logo.png` (lockup
+trasparente per header/footer/JSON-LD) + `public/og.png` (OG 1200x630). `app/manifest.ts` è **light** (display `browser`): sito vetrina,
 niente PWA standalone/sw.js. Pattern icone: `Z:\SECOND-BRAIN\sources\stack\pattern-icone-pwa-progetto.md`.

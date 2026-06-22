@@ -58,8 +58,20 @@ async function markKeyed() {
 }
 
 // Logo completo (lockup) trimmato dal nero esterno, alla larghezza richiesta.
+// Versione con sfondo (per comporre l'OG su canvas scuro).
 async function fullLogo(width) {
   return sharp(SRC).trim(TRIM).resize({ width }).png().toBuffer();
+}
+
+// Logo completo con sfondo TRASPARENTE (alpha-key da luminanza): galleggia pulito
+// su qualunque fondo (header con blur, footer) senza il rettangolo nero. Soglie
+// più morbide del monogramma per non perdere la riga piccola "AI AUTOMATION…".
+async function fullLogoKeyed(width) {
+  const trimmed = await sharp(SRC).trim({ background: "#000000", threshold: 28 }).resize({ width }).png().toBuffer();
+  const lo = 16, hi = 72, slope = 255 / (hi - lo);
+  const alpha = await sharp(trimmed).grayscale().linear(slope, -lo * slope).toColourspace("b-w").png().toBuffer();
+  // 640px = nitido fino a ~retina nell'header (mostrato ~48px); compresso per il web.
+  return sharp(trimmed).removeAlpha().joinChannel(alpha).png({ compressionLevel: 9 }).toBuffer();
 }
 
 // Sfondo scuro con glow caldo radiale dietro il mark: riprende l'illuminazione
@@ -148,9 +160,8 @@ async function buildLanding() {
   console.log("Landing (poweragency.it):");
   const pub = join(LANDING, "public");
   const app = join(LANDING, "app");
-  // Monogramma per header + logo completo per JSON-LD
-  await write(join(pub, "brand", "mark.png"), await squareIcon(512, 0.86));
-  await write(join(pub, "brand", "logo.png"), await fullLogo(1024));
+  // Logo completo (lockup PAI + wordmark) trasparente: header/footer + JSON-LD
+  await write(join(pub, "brand", "logo.png"), await fullLogoKeyed(640));
   // Set icone PWA
   await write(join(pub, "icon-192.png"), await squareIcon(192, 0.76));
   await write(join(pub, "icon-512.png"), await squareIcon(512, 0.76));
@@ -169,8 +180,7 @@ async function buildEcom() {
   }
   console.log("Shop ecom (shop.poweragency.it):");
   const pub = join(ECOM, "public");
-  await write(join(pub, "brand", "mark.png"), await squareIcon(512, 0.86));
-  await write(join(pub, "brand", "logo.png"), await fullLogo(1024));
+  await write(join(pub, "brand", "logo.png"), await fullLogoKeyed(640));
   await write(join(pub, "favicon.png"), await squareIcon(256, 0.82, { rounded: true }));
   await write(join(pub, "icon-192.png"), await squareIcon(192, 0.76));
   await write(join(pub, "icon-512.png"), await squareIcon(512, 0.76));

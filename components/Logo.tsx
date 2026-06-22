@@ -1,22 +1,13 @@
-// Marchio header/footer: monogramma ufficiale PAI (public/brand/mark.png, derivato
-// dal logo master via scripts/brand/gen-assets.mjs) + wordmark "PowerAgency".
+// Marchio header/footer: logo ufficiale PAI COMPLETO (monogramma + wordmark
+// "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"), sfondo trasparente, da
+// public/brand/logo.png. Nessun testo HTML affiancato: la scritta è nel logo.
 export default function Logo() {
   return (
-    <span className="inline-flex items-center gap-2.5">
-      <span className="grid h-[34px] w-[34px] place-items-center overflow-hidden rounded-[10px] border border-line-strong">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/brand/mark.png"
-          alt=""
-          width={34}
-          height={34}
-          className="h-full w-full object-cover"
-          aria-hidden
-        />
-      </span>
-      <span className="font-head text-[1.18rem] font-bold tracking-tight">
-        Power<span className="font-medium text-mut">Agency</span>
-      </span>
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/brand/logo.png"
+      alt="PowerAgency"
+      className="h-12 w-auto"
+    />
   );
 }
