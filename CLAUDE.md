@@ -35,7 +35,7 @@
 - Il case carrozzeria resta **anonimo** (mai nome/città). Carrozzerie/dentisti/edili NON sono verticali da spingere come pagine dedicate.
 
 ## Brand
-Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivati (sfondo trasparente): `public/brand/logo-horizontal.png` = **lockup orizzontale** (monogramma + wordmark affiancati), usato così com'è nell'header/footer da `components/Logo.tsx` (niente testo HTML); `public/brand/logo.png` = lockup impilato completo, usato in JSON-LD. Palette: base scuro `#0a0606`, accento arancio `#ff6a1a` (gradient amber→red), font Space Grotesk (`font-head`) + Inter.
+Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivati (sfondo trasparente): `public/brand/logo-horizontal.png` = **lockup orizzontale** (monogramma + wordmark affiancati), usato così com'è nell'header/footer da `components/Logo.tsx` (niente testo HTML); `public/brand/logo.png` = lockup impilato completo, usato in JSON-LD. Palette: base scuro `#0a0606`, accento arancio **rame** `#f47320` (gradient ambra→rame→bronzo `#ffb347 → #f47320 → #e8431f`, allineato all'arancione del logo PAI dal 22/06/2026), font Space Grotesk (`font-head`) + Inter.
 
 **Sfondo statico (rebrand 22/06/2026, allineato a shop.poweragency.it):** `components/Background.tsx` è un solo gradiente "fuoco" radiale fisso su `#0a0606` — **niente WebGL/three.js, niente particelle, niente griglia, niente cursore custom, niente effetti legati al mouse**. Sono stati rimossi `AuroraBackground`/`CustomCursor` (+ deps `three`, `@react-three/fiber`, `@react-three/drei`) e neutralizzati `MagneticButton`/`TiltCard` (API intatta, solo hover/press sobri). Regola brand: lo sfondo resta **scuro e statico** come lo shop.
 
@@ -52,6 +52,11 @@ maskable con safe-area ampia) + `app/icon.png` (favicon via convention, sostitui
 (header/footer) + `public/brand/logo.png` (impilato, JSON-LD) + `public/og.png` (OG 1200x630).
 `app/manifest.ts` è **light** (display `browser`): sito vetrina,
 niente PWA standalone/sw.js. Pattern icone: `Z:\SECOND-BRAIN\sources\stack\pattern-icone-pwa-progetto.md`.
+
+**Copertine prodotto** `public/products/<slug>.jpg` (powerleads/powersocial/powerlanding): NON generate
+da `gen-assets.mjs` — sono **copiate dallo shop** (`POWERAGENCY ECOM/web/public/products/`, generate lì con
+fal.ai, 16:10). Le usa `SoftwareDetail.tsx` come visual delle card `/software` (campo `cover` in `SOFTWARE`,
+fallback al placeholder a icona se assente). Per aggiornarle: ricopiarle dallo shop, non rigenerarle qui.
 
 **Asset social/manuali** (non usati dal sito): `node scripts/brand/ig-profile.mjs` genera la foto
 profilo Instagram (1080×1080, monogramma nell'area sicura del cerchio) in `Z:\SAAS\5.loghi pa\`,
