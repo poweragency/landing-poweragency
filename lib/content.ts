@@ -4,8 +4,7 @@ export const NAV_LINKS = [
   { href: "/ecosistema", label: "Ecosistema" },
   { href: "/agenzia-lead-generation", label: "Lead Generation" },
   { href: "/crm", label: "CRM" },
-  { href: "/prop", label: "Prop" },
-  { href: "/ecommerce", label: "Ecommerce" },
+  { href: "/blog", label: "Blog" },
   { href: "/shop", label: "Shop" },
 ] as const;
 
