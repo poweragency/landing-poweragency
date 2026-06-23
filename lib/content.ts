@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/software", label: "Software" },
   { href: "/ecosistema", label: "Ecosistema" },
+  { href: "/agenzia-lead-generation", label: "Lead Generation" },
   { href: "/crm", label: "CRM" },
   { href: "/prop", label: "Prop" },
   { href: "/ecommerce", label: "Ecommerce" },
@@ -496,6 +497,86 @@ export const ECOSISTEMA = {
     { step: "04", title: "Go-live + ottimizzazione", text: "Da lì ricevi lead qualificati nel CRM. Ottimizziamo nelle prime 4 settimane sulla base dei dati reali." },
   ],
 } as const;
+
+/* ============================================================
+   AGENZIA LEAD GENERATION — pagina /agenzia-lead-generation
+   Landing dedicata alla keyword commerciale "agenzia lead generation".
+   Angolo PA: ecosistema + qualifica AI + software proprietari usati prima
+   sul nostro business. Solo numeri reali (case carrozzeria, prop, ecommerce).
+   ============================================================ */
+export const LEAD_GEN = {
+  hero: {
+    kicker: "Agenzia di lead generation B2B",
+    title: "Agenzia di lead generation:",
+    titleAccent: "clienti, non contatti a caso.",
+    lead: "Costruiamo il sistema che attira, qualifica con l'AI e ti consegna lead pronti a comprare: sito, campagne e CRM in un'unica macchina. Lo usiamo ogni giorno sul nostro business prima di portarlo da te.",
+  },
+  // Sezione informativa: copre l'intento "cos'è un'agenzia di lead generation"
+  definition: {
+    kicker: "Partiamo dalle basi",
+    title: "Cos'è un'agenzia di lead generation",
+    paragraphs: [
+      "Un'agenzia di lead generation costruisce e gestisce il sistema che trasforma sconosciuti in contatti commerciali: intercetta le persone giuste, le porta a lasciare i propri dati e le qualifica prima di passarle al tuo reparto vendite. L'obiettivo non è fare numero, ma generare lead che hanno davvero intenzione di comprare.",
+      "La differenza tra un contatto e un lead qualificato è tutto: un form pieno di curiosi fa perdere tempo ai venditori; un lead qualificato — per settore, budget e intento — chiude. Per questo non ci fermiamo a raccogliere contatti: li filtriamo con l'AI e ti facciamo arrivare solo ciò che vale la chiamata.",
+    ],
+  },
+  // "Strategie di lead generation che usiamo" — i pillar differenzianti
+  pillars: [
+    {
+      icon: "magnet",
+      title: "Acquisizione multicanale",
+      text: "Lead estratti da Instagram e Google Maps con PowerLeads, il nostro software, più campagne Google Ads e Meta. Il sistema è agnostico al canale: lavoriamo dove sono i tuoi clienti.",
+    },
+    {
+      icon: "target",
+      title: "Qualifica con l'AI",
+      text: "Form intelligenti e scoring automatico per settore, budget e intento. Al sales arriva solo il lead caldo: niente liste da scremare a mano, niente chiamate sprecate.",
+    },
+    {
+      icon: "chart",
+      title: "CRM e follow-up",
+      text: "Ogni lead entra nel CRM con la sua priorità, notifiche real-time sul contatto caldo e follow-up automatici via email e WhatsApp. Nessun contatto perso tra i tool.",
+    },
+    {
+      icon: "cpu",
+      title: "Software nostri, provati sul campo",
+      text: "Non rivendiamo strumenti di terzi: usiamo i nostri, gli stessi con cui generiamo oltre 1.000 lead in un solo giorno per il nostro business. Quello che vendiamo, lo usiamo prima noi.",
+    },
+  ],
+  process: [
+    { step: "01", title: "Discovery call", text: "30 minuti. Capiamo settore, offerta e come gestisci i lead oggi. Già qui ti diciamo se siamo i partner giusti." },
+    { step: "02", title: "Strategia e audit", text: "Definiamo target, canali e messaggi. Economics chiari: costo per lead atteso, ROI e break-even. Nessun preventivo nebuloso." },
+    { step: "03", title: "Build del sistema", text: "Sito, campagne, qualifica AI e CRM costruiti e integrati, testati su traffico reale prima del go-live." },
+    { step: "04", title: "Lead nel CRM + ottimizzazione", text: "Da lì ricevi lead qualificati pronti da chiamare. Ottimizziamo nelle prime settimane sui dati reali, non sulle sensazioni." },
+  ],
+} as const;
+
+export const LEAD_GEN_FAQ: Faq[] = [
+  {
+    q: "Quanto costa un'agenzia di lead generation?",
+    a: "Dipende da canali, settore e obiettivi di volume. Non vendiamo pacchetti preconfezionati: dopo un breve audit, nella prima call ti diamo un range realistico con costo per lead atteso e ROI, senza preventivi da decifrare.",
+  },
+  {
+    q: "In quanto tempo arrivano i primi lead?",
+    a: "Il sistema si costruisce tipicamente in 2-3 settimane. Da lì i primi lead qualificati iniziano a entrare nel CRM; le prime 4 settimane le dedichiamo all'ottimizzazione sui dati reali.",
+  },
+  {
+    q: "Su quali canali generate lead?",
+    a: "Instagram e Google Maps tramite PowerLeads (il nostro software), più campagne Google Ads e Meta. Il sistema di qualifica è agnostico al canale: funziona con qualsiasi sorgente di traffico.",
+  },
+  {
+    q: "Che differenza c'è tra un contatto e un lead qualificato?",
+    a: "Un contatto ha solo lasciato i dati; un lead qualificato è stato filtrato per settore, budget e intento d'acquisto. Noi ti passiamo solo i secondi: l'AI scarta i curiosi prima che arrivino al tuo reparto vendite.",
+  },
+  {
+    q: "Lavorate solo con aziende B2B?",
+    a: "Il sistema dà il meglio dove c'è vendita consulenziale, con un ciclo lead-preventivo-chiusura: servizi B2B, studi professionali e attività locali. Il nostro verticale più forte, con case study reali, sono le carrozzerie.",
+  },
+  {
+    q: "Come vi differenziate dalle altre agenzie di lead generation?",
+    a: "La maggior parte delle agenzie vende servizi a mano. Noi abbiamo software proprietari e li usiamo prima sul nostro business — ecommerce fino a 10.000€ al giorno e oltre 120 account prop in produzione. Ai clienti portiamo un sistema già collaudato, non una teoria.",
+  },
+];
 
 export const ECOSISTEMA_FAQ: Faq[] = [
   {
