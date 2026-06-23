@@ -107,6 +107,81 @@ body {
   background: #3a2c24;
 }
 
+/* ============================================================
+   PROSE — corpo degli articoli del blog (markdown → HTML)
+   ============================================================ */
+.prose-pa {
+  color: var(--color-mut);
+  font-size: 1.06rem;
+  line-height: 1.78;
+}
+.prose-pa > * + * {
+  margin-top: 1.25rem;
+}
+.prose-pa h2 {
+  font-family: var(--font-head);
+  color: var(--color-ink);
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 2.6rem;
+}
+.prose-pa h3 {
+  font-family: var(--font-head);
+  color: var(--color-ink);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.prose-pa h2:first-child,
+.prose-pa h3:first-child {
+  margin-top: 0;
+}
+.prose-pa strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.prose-pa a {
+  color: var(--color-amber);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-line-strong);
+  transition: color 0.2s;
+}
+.prose-pa a:hover {
+  color: var(--color-orange);
+}
+.prose-pa ul,
+.prose-pa ol {
+  padding-left: 1.4rem;
+}
+.prose-pa ul {
+  list-style: disc;
+}
+.prose-pa ol {
+  list-style: decimal;
+}
+.prose-pa li {
+  margin-top: 0.5rem;
+}
+.prose-pa li::marker {
+  color: var(--color-orange);
+}
+.prose-pa blockquote {
+  border-left: 3px solid var(--color-orange);
+  padding-left: 1.1rem;
+  color: var(--color-ink);
+  font-style: italic;
+}
+.prose-pa code {
+  background: var(--color-surface-2);
+  padding: 0.15em 0.4em;
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+  color: var(--color-amber);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

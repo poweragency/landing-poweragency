@@ -34,6 +34,11 @@
 - **Solo numeri reali:** 10.000€/day ecom, 120+ account prop, case carrozzeria 60+ lead / 5 clienti / 15.000€. **Non inventarne altri.**
 - Il case carrozzeria resta **anonimo** (mai nome/città). Carrozzerie/dentisti/edili NON sono verticali da spingere come pagine dedicate.
 
+## Blog (dal 2026-06-23)
+- Sezione `/blog` (indice) + `/blog/[slug]` (articolo). **Sorgente = file markdown** in `content/blog/*.md` (frontmatter: `title`, `description`, `keyword`, `date`, `author`). Letti/parsati da `lib/blog.ts` (parser frontmatter minimale + `marked` per md→HTML). Blog interamente statico (`dynamicParams = false`, `generateStaticParams`).
+- SEO: `pageMeta()` per indice e per-articolo; JSON-LD `Blog` (indice) e `BlogPosting` + `BreadcrumbList` (articolo) via `articleSchema`/`breadcrumbSchema` in `lib/structured-data.ts`. Articoli aggiunti dinamicamente in `app/sitemap.ts`. Corpo articolo stilizzato con `.prose-pa` in `globals.css` (on-brand, no plugin typography).
+- **Workflow di pubblicazione:** gli articoli li genera **PowerSEO** (`Z:\SAAS\POWERSEO`, skill `/powerseo blog`, cadenza settimanale sulla keyword in trend) e arrivano come **PR** con un nuovo `.md` → **revisione umana** → merge → live. Mai auto-merge.
+
 ## Brand
 Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivati (sfondo trasparente): `public/brand/logo-horizontal.png` = **lockup orizzontale** (monogramma + wordmark affiancati), usato così com'è nell'header/footer da `components/Logo.tsx` (niente testo HTML); `public/brand/logo.png` = lockup impilato completo, usato in JSON-LD. Palette: base scuro `#0a0606`, accento arancio **rame** `#ca6f2a` (gradient ambra→rame→bronzo `#f6a64a → #ca6f2a → #a8401a`, allineato all'arancione del logo PAI dal 22/06/2026), font Space Grotesk (`font-head`) + Inter.
 
