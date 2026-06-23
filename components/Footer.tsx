@@ -8,13 +8,20 @@ const LEGAL = [
   { label: "Termini di servizio", href: "/termini" },
 ];
 
+// Verticali "palestra sul proprio business": fuori dalla nav (non sono servizi in
+// vendita, zero domanda SEO) ma linkati qui per non lasciarli orfani.
+const VERTICALI = [
+  { label: "Prop firms", href: "/prop" },
+  { label: "Ecommerce", href: "/ecommerce" },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-line bg-bg-soft px-6 pb-8 pt-12">
       <div className="mx-auto max-w-[1180px]">
-        <div className="grid grid-cols-1 gap-8 pb-8 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-8 pb-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
             <Logo />
             <p className="mt-3 max-w-[34ch] text-[0.9rem] leading-relaxed text-dim">
@@ -44,6 +51,21 @@ export default function Footer() {
             >
               Blog
             </Link>
+          </div>
+
+          <div>
+            <h4 className="mb-3 font-head text-[0.82rem] font-semibold uppercase tracking-[0.14em] text-dim">
+              Verticali
+            </h4>
+            {VERTICALI.map((v) => (
+              <Link
+                key={v.href}
+                href={v.href}
+                className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
+              >
+                {v.label}
+              </Link>
+            ))}
           </div>
 
           <div>
