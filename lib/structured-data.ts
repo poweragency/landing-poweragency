@@ -76,3 +76,40 @@ export function serviceSchema(input: {
     areaServed: { "@type": "Country", name: "Italia" },
   };
 }
+
+export function articleSchema(input: {
+  title: string;
+  description: string;
+  slug: string;
+  date: string;
+  author: string;
+}) {
+  const url = `${SITE_URL}/blog/${input.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.title,
+    description: input.description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    datePublished: input.date,
+    dateModified: input.date,
+    inLanguage: "it-IT",
+    image: `${SITE_URL}/og.png`,
+    author: { "@type": "Organization", name: input.author, "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: `${SITE_URL}${it.path}`,
+    })),
+  };
+}

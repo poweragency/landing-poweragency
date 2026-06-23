@@ -38,6 +38,12 @@ export default function Footer() {
             >
               Domande frequenti
             </Link>
+            <Link
+              href="/blog"
+              className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
+            >
+              Blog
+            </Link>
           </div>
 
           <div>
