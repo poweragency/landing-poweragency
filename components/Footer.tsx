@@ -15,13 +15,18 @@ const VERTICALI = [
   { label: "Ecommerce", href: "/ecommerce" },
 ];
 
+const RISORSE = [
+  { label: "Domande frequenti", href: "/#faq" },
+  { label: "Blog", href: "/blog" },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-line bg-bg-soft px-6 pb-8 pt-12">
       <div className="mx-auto max-w-[1180px]">
-        <div className="grid grid-cols-1 gap-8 pb-8 md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-8 pb-8 md:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
           <div>
             <Logo />
             <p className="mt-3 max-w-[34ch] text-[0.9rem] leading-relaxed text-dim">
@@ -39,18 +44,21 @@ export default function Footer() {
             >
               {CONTACT.email}
             </a>
-            <Link
-              href="/#faq"
-              className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
-            >
-              Domande frequenti
-            </Link>
-            <Link
-              href="/blog"
-              className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
-            >
-              Blog
-            </Link>
+          </div>
+
+          <div>
+            <h4 className="mb-3 font-head text-[0.82rem] font-semibold uppercase tracking-[0.14em] text-dim">
+              Risorse
+            </h4>
+            {RISORSE.map((r) => (
+              <Link
+                key={r.href}
+                href={r.href}
+                className="block py-1.5 text-[0.95rem] text-mut transition-colors hover:text-orange"
+              >
+                {r.label}
+              </Link>
+            ))}
           </div>
 
           <div>
