@@ -48,9 +48,9 @@ export default function SoftwarePage() {
         title={<>Domande sui software</>}
         items={SOFTWARE_FAQ}
         related={[
-          { label: "Il CRM su misura", href: "/crm" },
+          { label: "Agenzia di lead generation", href: "/agenzia-lead-generation" },
+          { label: "Gestionali e CRM verticali", href: "/crm" },
           { label: "Vai a PowerLeads", href: "https://powerleads.poweragency.it", external: true },
-          { label: "Sfoglia lo shop", href: "https://shop.poweragency.it", external: true },
         ]}
       />
 

@@ -161,7 +161,7 @@ export default function LeadGenerationPage() {
         items={LEAD_GEN_FAQ}
         related={[
           { label: "L'ecosistema completo", href: "/ecosistema" },
-          { label: "Il CRM su misura", href: "/crm" },
+          { label: "Gestionali e CRM verticali", href: "/crm" },
           { label: "PowerLeads, il software", href: "/software" },
         ]}
       />

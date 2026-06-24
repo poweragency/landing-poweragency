@@ -21,7 +21,8 @@ export default function Home() {
         title={<>Domande frequenti</>}
         items={HOME_FAQ}
         related={[
-          { label: "Il CRM su misura", href: "/crm" },
+          { label: "Agenzia di lead generation", href: "/agenzia-lead-generation" },
+          { label: "Gestionali e CRM verticali", href: "/crm" },
           { label: "I nostri software", href: "/software" },
         ]}
       />
