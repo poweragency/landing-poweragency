@@ -21,9 +21,9 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const HOME_TITLE = "PowerAgency — Sistemi AI per risultati reali";
+const HOME_TITLE = "PowerAgency — Agenzia AI per generare clienti";
 const HOME_OG_DESCRIPTION =
-  "Costruiamo asset che generano clienti. Non un'agenzia, ma un team che ogni giorno testa sul proprio business ciò che vende.";
+  "Agenzia AI: costruiamo sistemi che generano clienti. Un team che ogni giorno testa sul proprio business ciò che vende, prima di proportelo.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s — PowerAgency",
   },
   description:
-    "Costruiamo asset che generano clienti: sito, lead generation e CRM in un unico sistema guidato dall'AI. Se non funziona sul nostro business, non lo portiamo fuori.",
+    "Agenzia AI per generare clienti: sito, lead generation e CRM in un unico sistema guidato dall'AI. Se non funziona sul nostro business, non lo portiamo fuori.",
   alternates: { canonical: SITE_URL },
   applicationName: "PowerAgency",
   openGraph: {

@@ -12,10 +12,10 @@ import { pageMeta } from "@/lib/seo";
 import { serviceSchema, faqSchema } from "@/lib/structured-data";
 
 const DESCRIPTION =
-  "Sito che converte, lead generation con qualifica AI e CRM integrato: un'unica infrastruttura per catturare, qualificare e chiudere i lead. Funziona perché lo usiamo prima sui nostri business.";
+  "Sito che converte, lead generation con qualifica AI e CRM in un'unica infrastruttura: un sistema integrato di acquisizione clienti. Lo costruiamo e lo usiamo prima sui nostri business.";
 
 export const metadata = pageMeta({
-  title: "Ecosistema",
+  title: "Sistema integrato di acquisizione clienti",
   description: DESCRIPTION,
   path: "/ecosistema",
 });
@@ -26,10 +26,10 @@ export default function EcosistemaPage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "Ecosistema PowerAgency: sito, lead generation e CRM",
+            name: "Sistema integrato di acquisizione clienti PowerAgency",
             description: DESCRIPTION,
             path: "/ecosistema",
-            serviceType: "Sito web, lead generation e CRM AI integrati",
+            serviceType: "Sistema integrato: sito, lead generation e CRM con AI",
           }),
           faqSchema(ECOSISTEMA_FAQ),
         ]}
@@ -118,9 +118,9 @@ export default function EcosistemaPage() {
         title={<>Domande sull&apos;ecosistema</>}
         items={ECOSISTEMA_FAQ}
         related={[
-          { label: "Il CRM su misura", href: "/crm" },
+          { label: "Agenzia di lead generation", href: "/agenzia-lead-generation" },
+          { label: "Gestionali e CRM verticali", href: "/crm" },
           { label: "I nostri software", href: "/software" },
-          { label: "Sfoglia lo shop", href: "https://shop.poweragency.it", external: true },
         ]}
       />
 

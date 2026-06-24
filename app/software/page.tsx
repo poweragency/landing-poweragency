@@ -8,10 +8,10 @@ import { pageMeta } from "@/lib/seo";
 import { serviceSchema, faqSchema } from "@/lib/structured-data";
 
 const DESCRIPTION =
-  "PowerLeads, PowerSocial e PowerLanding: i software che usiamo ogni giorno sul nostro business prima di portarli fuori. Lead generation, social e siti che convertono.";
+  "Software di lead generation con icebreaker AI: estraggono lead da Instagram e Google Maps, scrivono i messaggi con l'AI e li inviano. PowerLeads, PowerSocial e PowerLanding — li usiamo prima noi.";
 
 export const metadata = pageMeta({
-  title: "Software proprietari",
+  title: "Software lead generation con icebreaker AI",
   description: DESCRIPTION,
   path: "/software",
 });
@@ -25,7 +25,7 @@ export default function SoftwarePage() {
             name: "Software proprietari PowerAgency",
             description: DESCRIPTION,
             path: "/software",
-            serviceType: "Software e siti web AI-powered",
+            serviceType: "Software di lead generation con AI",
           }),
           faqSchema(SOFTWARE_FAQ),
         ]}
@@ -37,7 +37,7 @@ export default function SoftwarePage() {
             Software che usiamo <span className="grad-text">prima di vendere.</span>
           </>
         }
-        lead="Tre strumenti nati dalle nostre operazioni quotidiane: lead generation, contenuti e siti. Ognuno testato sul campo, non in una demo."
+        lead="Software di lead generation con icebreaker scritti dall'AI, gestione social e siti che convertono. Nati dalle nostre operazioni quotidiane — oltre 1.000 lead generati in un solo giorno — e testati sul campo, non in una demo."
       />
 
       {SOFTWARE.map((s) => (
@@ -48,9 +48,9 @@ export default function SoftwarePage() {
         title={<>Domande sui software</>}
         items={SOFTWARE_FAQ}
         related={[
-          { label: "Il CRM su misura", href: "/crm" },
+          { label: "Agenzia di lead generation", href: "/agenzia-lead-generation" },
+          { label: "Gestionali e CRM verticali", href: "/crm" },
           { label: "Vai a PowerLeads", href: "https://powerleads.poweragency.it", external: true },
-          { label: "Sfoglia lo shop", href: "https://shop.poweragency.it", external: true },
         ]}
       />
 

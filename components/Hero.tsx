@@ -40,15 +40,15 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-gradient-to-r from-amber to-red" />
           </span>
-          Sistemi AI · Risultati reali
+          Agenzia AI · Risultati reali
         </motion.p>
 
         <motion.h1
           variants={v}
           className="mx-auto mt-7 w-full max-w-[16ch] font-head text-[clamp(2.2rem,7vw,5.4rem)] font-bold leading-[1.02] tracking-[-0.03em]"
         >
-          Sistemi AI per chi vuole{" "}
-          <span className="grad-text block">risultati, non demo</span>
+          Agenzia AI per chi vuole{" "}
+          <span className="grad-text block">clienti, non demo</span>
         </motion.h1>
 
         <motion.p
