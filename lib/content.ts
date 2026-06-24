@@ -468,8 +468,8 @@ export const ECOMMERCE_FAQ: Faq[] = [
 export const ECOSISTEMA = {
   hero: {
     kicker: "L'ecosistema PowerAgency",
-    title: "Sito, lead generation e CRM.",
-    titleAccent: "Un solo ecosistema.",
+    title: "Sito, lead generation e CRM:",
+    titleAccent: "un solo sistema di acquisizione clienti.",
     lead: "Non tre tool incollati: un'unica infrastruttura guidata dall'AI che cattura il lead, lo qualifica e te lo passa quando è caldo. Funziona perché la usiamo prima sui nostri business.",
   },
   pillars: [
@@ -597,5 +597,115 @@ export const ECOSISTEMA_FAQ: Faq[] = [
   {
     q: "Cosa succede se voglio interrompere?",
     a: "Il sistema resta tuo: il sito è esportabile e i dati dei lead nel CRM ti seguono. Nessun lock-in: paghi il servizio finché ti serve.",
+  },
+];
+
+/* ============================================================
+   GESTIONALI VERTICALI — pagina OMBRELLO /crm
+   Linea prodotto: gestionali/CRM su misura (servizio) + prodotti verticali
+   per nicchia (prodotto). Le pagine di nicchia (es. /gestionale-carrozzeria)
+   NON stanno nell'header: sono linkate da qui + footer + sitemap.
+   ============================================================ */
+export const GESTIONALI = {
+  hero: {
+    kicker: "Gestionali e CRM verticali",
+    title: "Gestionali su misura per il tuo settore,",
+    titleAccent: "non software generici.",
+    lead: "Costruiamo gestionali e CRM modellati sul flusso reale di un'attività: lead, preventivi, lavorazioni e follow-up in un'unica pipeline. Su misura per la tua azienda, o come prodotto verticale pronto per la tua nicchia.",
+  },
+  // I due modi in cui lavoriamo (servizio su misura vs prodotto verticale)
+  lines: [
+    {
+      icon: "wrench",
+      title: "Gestionale su misura",
+      text: "Lo costruiamo sul flusso esatto della tua azienda: i tuoi stati, i tuoi documenti, le tue automazioni. Niente moduli inutili, niente compromessi da software preconfezionato.",
+    },
+    {
+      icon: "layers",
+      title: "Prodotti verticali per nicchia",
+      text: "Gestionali pensati per un intero settore, pronti da attivare. Il primo è il gestionale per carrozzerie; altri verticali sono in arrivo.",
+    },
+  ],
+  // Perché un nostro gestionale (qualsiasi verticale)
+  why: [
+    {
+      icon: "inbox",
+      title: "Dal lead alla consegna, un posto solo",
+      text: "Contatti, preventivi, pratiche e lavorazioni in un'unica pipeline. Niente fogli Excel, niente contatti persi tra i canali.",
+    },
+    {
+      icon: "send",
+      title: "Automazioni email e WhatsApp",
+      text: "Conferme, promemoria e aggiornamenti partono da soli, al momento giusto. Il cliente è sempre informato, tu non rincorri nessuno.",
+    },
+    {
+      icon: "link",
+      title: "Si integra con ciò che hai già",
+      text: "Ci colleghiamo via webhook ai gestionali e agli strumenti che usi, così non reinserisci i dati due volte.",
+    },
+  ],
+} as const;
+
+export const GESTIONALI_FAQ: Faq[] = [
+  {
+    q: "Costruite gestionali su misura o prodotti pronti?",
+    a: "Entrambi. Costruiamo gestionali su misura sul flusso della tua azienda, e prodotti verticali pensati per un'intera nicchia. Il primo prodotto verticale pronto è il gestionale per carrozzerie.",
+  },
+  {
+    q: "Per quale settore è disponibile un prodotto verticale?",
+    a: "Il primo verticale pronto è quello per le carrozzerie. Stiamo costruendo altri prodotti verticali; nel frattempo, per il tuo settore possiamo partire con un gestionale su misura.",
+  },
+  {
+    q: "Posso vederlo prima di decidere?",
+    a: "Sì: il gestionale per carrozzerie ha una demo navigabile, e per un progetto su misura ti mostriamo in una call come lo modelliamo sul tuo flusso.",
+  },
+  {
+    q: "Si integra con il software che uso già?",
+    a: "Sì. Ci colleghiamo via webhook ai gestionali e agli strumenti esistenti, così i dati non li reinserisci a mano.",
+  },
+  {
+    q: "Quanto tempo serve per partire?",
+    a: "Per un prodotto verticale pronto l'attivazione è rapida. Per un gestionale su misura dipende dal flusso: te lo diciamo dopo un breve audit, di solito poche settimane.",
+  },
+];
+
+/* ============================================================
+   GESTIONALE CARROZZERIA — prodotto verticale, landing /gestionale-carrozzeria
+   Pagina di nicchia (FUORI dall'header). Riusa CRM.modules/workflow/demo
+   (via CrmShowcase) e CASE_METRICS (via CaseStudy).
+   ============================================================ */
+export const GESTIONALE_CARROZZERIA = {
+  hero: {
+    kicker: "Prodotto verticale · Carrozzerie",
+    title: "Il gestionale per carrozzeria",
+    titleAccent: "che chiude i preventivi al posto tuo.",
+    lead: "Lead, preventivi, pratiche e lavorazioni in un'unica pipeline, con follow-up automatici via email e WhatsApp. Si integra col gestionale che usi già — e non perdi più un preventivo nel cassetto.",
+  },
+} as const;
+
+export const GESTIONALE_CARROZZERIA_FAQ: Faq[] = [
+  {
+    q: "Che differenza c'è tra questo e un gestionale per carrozzeria tradizionale?",
+    a: "Il gestionale classico gestisce tempario, sinistri e fatture. Il nostro presidia ciò che viene prima e dopo: intercettare il lead, mandare il preventivo e fare follow-up finché non chiudi. I due lavorano insieme.",
+  },
+  {
+    q: "Si integra con il software che uso già in carrozzeria?",
+    a: "Sì. Ci colleghiamo via webhook a CarroGest, MecPlanet e OneOff, così non rifai il lavoro due volte.",
+  },
+  {
+    q: "Manda davvero i follow-up su WhatsApp da solo?",
+    a: "Sì. Email e WhatsApp partono in automatico secondo le regole che imposti: conferme, promemoria appuntamento e aggiornamenti sullo stato della pratica. Niente preventivi dimenticati.",
+  },
+  {
+    q: "Funziona se ho più sedi?",
+    a: "Sì, è pensato multi-sede: ogni sede ha i suoi lead e le sue pratiche, e tu vedi tutto da un'unica dashboard.",
+  },
+  {
+    q: "Posso provarlo prima?",
+    a: "Sì, c'è una demo navigabile. Te la mostriamo anche sui numeri reali del primo verticale in una call, senza impegno.",
+  },
+  {
+    q: "Avete dati reali sui risultati?",
+    a: "Sì: in una carrozzeria che lo usa abbiamo portato oltre 60 lead in due settimane, 5 clienti chiusi e 15.000€ di fatturato. Lo costruiamo e lo misuriamo sul campo.",
   },
 ];
