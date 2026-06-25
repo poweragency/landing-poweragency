@@ -6,6 +6,12 @@ date: "2026-06-25"
 author: "PowerAgency"
 ---
 
+## In breve
+
+- Per trovare clienti come nutrizionista, all'attrazione organica va aggiunto un sistema attivo: intercetta le persone giuste, le contatta in modo pertinente, le qualifica.
+- L'AI trova pazienti in target, scrive il primo messaggio su misura e qualifica le risposte; tu entri solo nelle conversazioni già calde.
+- Restano imprescindibili le basi: nicchia definita, offerta d'ingresso semplice e un profilo Google Business con recensioni.
+
 Se fai la nutrizionista o il nutrizionista, quasi sempre il problema non è la competenza: è avere un flusso costante e prevedibile di nuovi pazienti. Pubblichi ricette su Instagram, cerchi di farti trovare su Google, aspetti il passaparola — e i clienti arrivano a singhiozzo, mai con la regolarità che permetterebbe di riempire l'agenda in modo programmato. Nel 2026 la differenza non la fa chi è più bravo in assoluto: la fa chi ha costruito un sistema di acquisizione che lavora anche quando sei in visita con un paziente.
 
 Noi costruiamo strumenti di lead generation e li usiamo ogni giorno sul nostro business, prima di proporli a qualcuno. Quindi qui niente consigli teorici da manuale di marketing sanitario: ti diciamo cosa funziona davvero per un nutrizionista nel 2026, e dove l'AI sta cambiando le regole in modo concreto.
