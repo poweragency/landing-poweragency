@@ -6,6 +6,12 @@ date: "2026-06-25"
 author: "PowerAgency"
 ---
 
+## In breve
+
+- Trovare clienti come personal trainer è questione di sistema, non di profilo più curato: nicchia, offerta d'ingresso, outreach mirato, qualifica e follow-up.
+- L'AI trova contatti in target, scrive il primo messaggio personalizzato e qualifica chi è pronto: tu lavori solo le conversazioni già calde.
+- Il vero collo di bottiglia non è trovare contatti, è non perderli: un follow-up strutturato e un CRM cambiano la percentuale di chiusura.
+
 Se fai il personal trainer, il problema non è quasi mai la competenza tecnica: è il flusso prevedibile di nuovi clienti. Pubblichi sui social, qualcuno ti scrive via DM, magari un paio diventano clienti — ma non è un sistema, è una serie di coincidenze fortunate. Nel 2026 la differenza non la fa chi ha il profilo più curato: la fa chi ha costruito un processo che porta contatti qualificati con regolarità, senza dipendere dalla settimana fortunata.
 
 Noi costruiamo strumenti di lead generation e li usiamo sul nostro business prima di proporli a qualcuno. Quindi qui niente teoria da manuale del marketing sportivo: ti diciamo cosa funziona davvero per un PT freelance, e dove l'AI sposta davvero le cose.
