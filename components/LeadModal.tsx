@@ -10,6 +10,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { CONTACT } from "@/lib/content";
 import { EASE } from "@/lib/motion";
+import { gaEvent } from "@/lib/gtag";
 
 type Props = {
   open: boolean;
@@ -117,6 +118,11 @@ export default function LeadModal({
       });
       if (!res.ok) throw new Error("bad response");
       setStatus("success");
+      // GA4: lead inviato (diventa evento chiave in GA4 → "lead organici" nel report PowerSEO).
+      gaEvent("generate_lead", {
+        source: payload.source || "(diretta)",
+        sector: payload.sector || "(da definire)",
+      });
     } catch {
       setStatus("error");
       setErrorMsg("Qualcosa è andato storto. Riprova o scrivici via email.");
