@@ -38,7 +38,12 @@
 ## Blog (dal 2026-06-23)
 - Sezione `/blog` (indice) + `/blog/[slug]` (articolo). **Sorgente = file markdown** in `content/blog/*.md` (frontmatter: `title`, `description`, `keyword`, `date`, `author`). Letti/parsati da `lib/blog.ts` (parser frontmatter minimale + `marked` per md→HTML). Blog interamente statico (`dynamicParams = false`, `generateStaticParams`).
 - SEO: `pageMeta()` per indice e per-articolo; JSON-LD `Blog` (indice) e `BlogPosting` + `BreadcrumbList` (articolo) via `articleSchema`/`breadcrumbSchema` in `lib/structured-data.ts`. Articoli aggiunti dinamicamente in `app/sitemap.ts`. Corpo articolo stilizzato con `.prose-pa` in `globals.css` (on-brand, no plugin typography).
-- **Workflow di pubblicazione:** gli articoli li genera **PowerSEO** (`Z:\SAAS\POWERSEO`, skill `/powerseo blog`, cadenza settimanale sulla keyword in trend) e arrivano come **PR** con un nuovo `.md` → **revisione umana** → merge → live. Mai auto-merge.
+- **Workflow di pubblicazione:** gli articoli li genera **PowerSEO** (`Z:\SAAS\POWERSEO`) e arrivano come **PR** con un nuovo `.md` → **revisione umana** → merge → live. Mai auto-merge. **AUTOMATICO dal 25/06:** routine cloud `/schedule` "PowerSEO blog" (lun 08:00) apre la PR da sola.
+
+## Analytics & cookie consent (2026-06-27)
+- **GA4** (proprietà *PowerAgency Web*, `G-Q2F9MKE0YZ`) installato via **`next/script`** in `app/layout.tsx` — NON `@next/third-parties` (zero deps). Helper in `lib/gtag.ts` (`GA_ID`, `gaEvent`).
+- **Google Consent Mode v2:** `analytics_storage` parte **negato**; si attiva solo dopo "Accetta" sul banner `components/CookieBanner.tsx` (scelta in localStorage `pa_cookie_consent`, riletta dal tag al load). GDPR ok.
+- **Lead tracking:** `LeadModal.tsx` spara `gaEvent("generate_lead", {source, sector})` sul submit ok (`/api/lead`). Da marcare come *evento chiave* in GA4 → KPI lead nel report di crescita PowerSEO. ⚠️ Prima del 27/06 GA4 NON era installato (proprietà vuota). Pattern: brain `[[ga4-consent-mode-nextjs-zero-dip]]`.
 
 ## Brand
 Email `info@poweragency.it` · IG `@_poweragency_` · logo ufficiale **PAI** (monogramma metallico + nodo AI, wordmark "POWER AGENCY · AI AUTOMATION & SaaS SYSTEM"). Master: `public/brand/source/logo-master.jpeg`. Derivati (sfondo trasparente): `public/brand/logo-horizontal.png` = **lockup orizzontale** (monogramma + wordmark affiancati), usato così com'è nell'header/footer da `components/Logo.tsx` (niente testo HTML); `public/brand/logo.png` = lockup impilato completo, usato in JSON-LD. Palette: base scuro `#0a0606`, accento arancio **rame** `#ca6f2a` (gradient ambra→rame→bronzo `#f6a64a → #ca6f2a → #a8401a`, allineato all'arancione del logo PAI dal 22/06/2026), font Space Grotesk (`font-head`) + Inter.
