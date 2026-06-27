@@ -9,6 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import { SITE_URL, OG_IMAGE } from "@/lib/seo";
 import { organizationSchema } from "@/lib/structured-data";
 import { GA_ID } from "@/lib/gtag";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,22 +65,27 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
-        {/* Google Analytics 4 (Google tag) — proprietà PowerAgency Web. */}
+        {/* Google Analytics 4 con Consent Mode v2: analytics NEGATO di default,
+            attivato solo dopo consenso esplicito (banner cookie). */}
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+var c='denied'; try{ if(localStorage.getItem('pa_cookie_consent')==='granted') c='granted'; }catch(e){}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c});
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
-        </Script>
         <JsonLd data={organizationSchema()} />
         <Background />
         <Nav />
         {children}
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

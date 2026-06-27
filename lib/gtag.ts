@@ -19,3 +19,31 @@ export function gaEvent(name: string, params?: Record<string, unknown>) {
     window.gtag("event", name, params ?? {});
   }
 }
+
+// ── Consenso cookie (Google Consent Mode v2) ───────────────────────────────
+// Default = negato (impostato nel tag in layout.tsx). Il banner aggiorna il
+// consenso e lo memorizza; ai caricamenti successivi il default lo rilegge.
+export const CONSENT_KEY = "pa_cookie_consent";
+export type Consent = "granted" | "denied";
+
+export function getStoredConsent(): Consent | null {
+  try {
+    const v = localStorage.getItem(CONSENT_KEY);
+    return v === "granted" || v === "denied" ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Memorizza la scelta e aggiorna il consenso analytics nel tag GA4. */
+export function setAnalyticsConsent(granted: boolean) {
+  const value: Consent = granted ? "granted" : "denied";
+  try {
+    localStorage.setItem(CONSENT_KEY, value);
+  } catch {
+    /* storage non disponibile */
+  }
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("consent", "update", { analytics_storage: value });
+  }
+}
