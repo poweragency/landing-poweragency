@@ -38,7 +38,7 @@
 ## Blog (dal 2026-06-23)
 - Sezione `/blog` (indice) + `/blog/[slug]` (articolo). **Sorgente = file markdown** in `content/blog/*.md` (frontmatter: `title`, `description`, `keyword`, `date`, `author`). Letti/parsati da `lib/blog.ts` (parser frontmatter minimale + `marked` per md→HTML). Blog interamente statico (`dynamicParams = false`, `generateStaticParams`).
 - SEO: `pageMeta()` per indice e per-articolo; JSON-LD `Blog` (indice) e `BlogPosting` + `BreadcrumbList` (articolo) via `articleSchema`/`breadcrumbSchema` in `lib/structured-data.ts`. Articoli aggiunti dinamicamente in `app/sitemap.ts`. Corpo articolo stilizzato con `.prose-pa` in `globals.css` (on-brand, no plugin typography).
-- **Workflow di pubblicazione:** gli articoli li genera **PowerSEO** (`Z:\SAAS\POWERSEO`) e arrivano come **PR** con un nuovo `.md` → **revisione umana** → merge → live. Mai auto-merge. **AUTOMATICO dal 25/06:** routine cloud `/schedule` "PowerSEO blog" (lun 08:00) apre la PR da sola.
+- **Workflow di pubblicazione:** gli articoli li genera **PowerSEO** (`Z:\SAAS\POWERSEO`) come nuovo `.md`. **AUTOMATICO dal 25/06**, **auto-pubblicazione con gate dal 29/06:** la routine cloud `/schedule` "PowerSEO blog" (lun 08:00) genera → umanizza (EEAT) → auto-giudica → se promuovibile **e** build Vercel verde **auto-mergia** (LIVE), altrimenti apre PR `[DA RIVEDERE]` per la revisione umana. (L'on-page resta report+PR+revisione umana, mai auto-merge.)
 
 ## Analytics & cookie consent (2026-06-27)
 - **GA4** (proprietà *PowerAgency Web*, `G-Q2F9MKE0YZ`) installato via **`next/script`** in `app/layout.tsx` — NON `@next/third-parties` (zero deps). Helper in `lib/gtag.ts` (`GA_ID`, `gaEvent`).
