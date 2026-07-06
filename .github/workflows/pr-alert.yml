@@ -1,0 +1,41 @@
+name: Avviso PR da revisionare
+
+# Email (Resend) quando una PR richiede revisione umana:
+# - PR aperta con titolo [ON-PAGE] (routine mensile quick-win: mai auto-merge)
+# - label needs-human aggiunta (blog bocciato dal gate qualita' -> [DA RIVEDERE])
+# Le PR blog che passano il gate si auto-pubblicano da sole e NON generano email.
+# Secret richiesto: RESEND_API_KEY (stessa chiave del report PowerSEO).
+
+on:
+  pull_request:
+    types: [opened, labeled]
+
+permissions: {}
+
+jobs:
+  alert:
+    # opened con [ON-PAGE] nel titolo, oppure label needs-human aggiunta dopo
+    # (escludendo le [ON-PAGE], che hanno gia' mandato l'email all'apertura)
+    if: >-
+      (github.event.action == 'opened' && contains(github.event.pull_request.title, '[ON-PAGE]')) ||
+      (github.event.action == 'labeled' && github.event.label.name == 'needs-human' && !contains(github.event.pull_request.title, '[ON-PAGE]'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Email via Resend
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          REPO: ${{ github.repository }}
+        run: |
+          jq -n --arg t "$PR_TITLE" --arg u "$PR_URL" --arg r "$REPO" '
+            {
+              from: "PowerSEO <seo@poweragency.it>",
+              to: ["admin@poweragency.it"],
+              subject: ("PR da revisionare: " + $t),
+              html: ("<p>Una PR richiede la tua revisione su <b>" + $r + "</b>:</p><p><a href=\"" + $u + "\">" + $t + "</a></p><p>Apri la preview Vercel, controlla e mergia se ok: questa PR non si pubblica da sola.</p>")
+            }' \
+          | curl -sf -X POST https://api.resend.com/emails \
+              -H "Authorization: Bearer $RESEND_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d @-
