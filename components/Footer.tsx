@@ -93,7 +93,8 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6 text-[0.86rem] text-dim">
-          <p>© {year} PowerAgency. Tutti i diritti riservati.</p>
+          {/* Forma staccata "Power Agency" a supporto della query brand (vedi alternateName nello schema Organization) */}
+          <p>© {year} Power Agency. Tutti i diritti riservati.</p>
 
           <div className="flex flex-wrap items-center gap-4">
             <p>Costruito con sistemi che vendiamo.</p>

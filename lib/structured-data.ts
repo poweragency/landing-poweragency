@@ -18,6 +18,9 @@ export function organizationSchema() {
     "@type": "Organization",
     "@id": ORG_ID,
     name: "PowerAgency",
+    // La query brand reale su Google è "power agency" (staccato): l'alternateName
+    // dice esplicitamente all'algoritmo che le due forme sono la stessa entità.
+    alternateName: "Power Agency",
     url: SITE_URL,
     logo: `${SITE_URL}/brand/logo.png`,
     image: `${SITE_URL}/brand/logo.png`,
