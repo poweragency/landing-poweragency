@@ -1,0 +1,17 @@
+# IndexNow — a ogni push su main notifica a Bing (e partner) gli URL della sitemap.
+# Il deploy Vercel parte in parallelo sullo stesso push: lo script con --wait polla il
+# key file live (max ~8 min) prima di pingare. Nessun secret: la chiave IndexNow è
+# pubblica by design (dimostra il controllo dell'host).
+name: indexnow
+on:
+  push:
+    branches: [main]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/indexnow-ping.mjs --wait
