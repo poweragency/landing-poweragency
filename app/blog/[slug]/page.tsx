@@ -42,6 +42,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             description: post.description,
             slug: post.slug,
             date: post.date,
+            updated: post.updated,
             author: post.author,
           }),
           breadcrumbSchema([
@@ -62,7 +63,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </Link>
 
           <p className="mt-8 font-head text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-dim">
-            {fmtDate(post.date)} · {post.readingTime} min di lettura
+            {fmtDate(post.date)}
+            {post.updated && post.updated !== post.date ? ` · Aggiornato il ${fmtDate(post.updated)}` : ""} ·{" "}
+            {post.readingTime} min di lettura
           </p>
           <h1 className="mt-4 font-head text-[clamp(1.9rem,4.5vw,3rem)] font-bold leading-[1.08] tracking-[-0.03em]">
             {post.title}

@@ -85,6 +85,7 @@ export function articleSchema(input: {
   description: string;
   slug: string;
   date: string;
+  updated?: string; // ultimo refresh contenuto: se assente, dateModified = date
   author: string;
 }) {
   const url = `${SITE_URL}/blog/${input.slug}`;
@@ -96,7 +97,7 @@ export function articleSchema(input: {
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: input.date,
-    dateModified: input.date,
+    dateModified: input.updated || input.date,
     inLanguage: "it-IT",
     image: `${SITE_URL}/og.png`,
     author: { "@type": "Organization", name: input.author, "@id": ORG_ID },

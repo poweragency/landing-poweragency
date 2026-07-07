@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const posts = getAllPostsMeta().map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
-    lastModified: p.date ? new Date(p.date) : now,
+    lastModified: p.updated ? new Date(p.updated) : p.date ? new Date(p.date) : now,
     changeFrequency: "yearly" as Freq,
     priority: 0.6,
   }));

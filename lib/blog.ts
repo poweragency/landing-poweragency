@@ -11,7 +11,8 @@ export type PostMeta = {
   title: string;
   description: string;
   keyword: string;
-  date: string; // ISO yyyy-mm-dd
+  date: string; // ISO yyyy-mm-dd (pubblicazione)
+  updated: string; // ISO yyyy-mm-dd ultimo refresh contenuto ("" = mai aggiornato)
   author: string;
   readingTime: number; // minuti
 };
@@ -50,6 +51,7 @@ export function getPost(slug: string): Post | null {
     description: data.description ?? "",
     keyword: data.keyword ?? "",
     date: data.date ?? "",
+    updated: data.updated ?? "",
     author: data.author ?? "PowerAgency",
     readingTime: Math.max(1, Math.round(words / 200)),
     html: marked.parse(body, { async: false }) as string,
