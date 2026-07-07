@@ -42,6 +42,16 @@
 - **On-page automatico (dal 06/07):** routine cloud mensile "PowerSEO on-page quick-win" (16 del mese ~09:00) → PR `[ON-PAGE]` su questo repo, **sempre revisione umana, mai auto-merge**.
 - **Avvisi email (dal 06/07):** `.github/workflows/pr-alert.yml` manda una email (Resend, secret `RESEND_API_KEY`) a `admin@poweragency.it` SOLO per le PR che richiedono revisione umana: titolo `[ON-PAGE]` o label `needs-human`. Le PR auto-pubblicate non generano email. Pattern: brain `[[avvisi-pr-needs-human-action-resend]]`.
 
+## IndexNow → Bing/ChatGPT/Copilot (dal 2026-07-07)
+- **Perché:** Bing alimenta ChatGPT Search e Copilot; Bingbot ci ricrawlava quasi mai (6 impression
+  in 2 mesi in BWT, warning basati su crawl stale del vecchio hub). IndexNow gli notifica gli URL.
+- **Come:** chiave = `public/<hex32>.txt` (pubblica by design, servita alla root); script
+  `scripts/indexnow-ping.mjs` (zero-dep: legge la sitemap di prod e POSTa a `api.indexnow.org`);
+  workflow `.github/workflows/indexnow.yml` a ogni push su main (`--wait` polla il key file live
+  prima di pingare, il deploy Vercel corre in parallelo). Ping manuale: `node scripts/indexnow-ping.mjs`.
+- Monitoraggio: BWT → IndexNow (URL ricevuti) e **AI Performance** (citazioni Copilot). Contesto GAIO:
+  brain `[[gaio-rankare-nelle-risposte-llm]]`, pilastro GAIO di PowerSEO.
+
 ## Analytics & cookie consent (2026-06-27)
 - **GA4** (proprietà *PowerAgency Web*, `G-Q2F9MKE0YZ`) installato via **`next/script`** in `app/layout.tsx` — NON `@next/third-parties` (zero deps). Helper in `lib/gtag.ts` (`GA_ID`, `gaEvent`).
 - **Google Consent Mode v2:** `analytics_storage` parte **negato**; si attiva solo dopo "Accetta" sul banner `components/CookieBanner.tsx` (scelta in localStorage `pa_cookie_consent`, riletta dal tag al load). GDPR ok.
