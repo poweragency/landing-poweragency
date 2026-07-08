@@ -3,6 +3,7 @@ title: "Come trovare clienti come nutrizionista: la guida 2026 (con l'AI)"
 description: "Strategie reali per trovare clienti come nutrizionista nel 2026: dall'acquisizione attiva alla qualifica AI. Scritto da chi questi sistemi li usa ogni giorno."
 keyword: "come trovare clienti come nutrizionista"
 date: "2026-06-25"
+updated: "2026-07-08"
 author: "PowerAgency"
 ---
 
@@ -14,7 +15,7 @@ author: "PowerAgency"
 
 Se fai la nutrizionista o il nutrizionista, quasi sempre il problema non è la competenza: è avere un flusso costante e prevedibile di nuovi pazienti. Pubblichi ricette su Instagram, cerchi di farti trovare su Google, aspetti il passaparola — e i clienti arrivano a singhiozzo, mai con la regolarità che permetterebbe di riempire l'agenda in modo programmato. Nel 2026 la differenza non la fa chi è più bravo in assoluto: la fa chi ha costruito un sistema di acquisizione che lavora anche quando sei in visita con un paziente.
 
-Noi costruiamo strumenti di lead generation e li usiamo ogni giorno sul nostro business, prima di proporli a qualcuno. Quindi qui niente consigli teorici da manuale di marketing sanitario: ti diciamo cosa funziona davvero per un nutrizionista nel 2026, e dove l'AI sta cambiando le regole in modo concreto.
+Noi di Power Agency costruiamo strumenti di lead generation e li usiamo ogni giorno sul nostro business, prima di proporli a qualcuno. Quindi qui niente consigli teorici da manuale di marketing sanitario: ti diciamo cosa funziona davvero per un nutrizionista nel 2026, e dove l'AI sta cambiando le regole in modo concreto.
 
 ## Cosa è cambiato nel 2026
 
@@ -23,6 +24,8 @@ Per anni la strategia standard era una sola: pubblica contenuti utili, posiziona
 - **Il ciclo di decisione si è allungato.** Tra il momento in cui una persona pensa "dovrei rivolgermi a un nutrizionista" e il momento in cui prenota la prima visita passano spesso settimane. Se in quel periodo non c'è nessun sistema che tiene vivo il contatto, quella persona si perde — non perché non fosse interessata, ma perché non c'era nessuno al momento giusto.
 - **La concorrenza online è cresciuta.** Professionisti competenti ce ne sono ovunque, e il paziente oggi confronta profili, legge recensioni e valuta chi comunica meglio prima ancora di scrivere un messaggio. Non basta essere bravi: bisogna essere trovabili dalle persone giuste e affidabili agli occhi di chi ancora non ti conosce.
 - **Il passaparola non scala.** È il canale più qualificato che esiste, ma non ci puoi costruire una pianificazione. Funziona come bonus, non come sistema.
+
+La domanda potenziale, intanto, resta enorme: secondo la sorveglianza [PASSI dell'Istituto Superiore di Sanità](https://www.iss.it/en/-/giornata-mondiale-dell-obesita-sorveglianza-passi-4-adulti-su-10-sono-in-eccesso-ponderale-3-in-sovrappeso-e-1-obeso) (dati 2022-2023), in Italia 4 adulti su 10 sono in eccesso ponderale — 3 in sovrappeso e 1 con obesità — e meno della metà di chi è in eccesso ponderale riferisce di aver ricevuto dal proprio medico il consiglio di perdere peso. Quando il consiglio arriva, però, i comportamenti cambiano: tra chi lo ha ricevuto la quota di chi segue una dieta sale al 46%, contro il 17% di chi non lo ha ricevuto. È la conferma, con dati nazionali, che un contatto pertinente al momento giusto sposta le decisioni.
 
 Chi oggi cresce in modo prevedibile ha aggiunto all'attrazione organica un sistema attivo che intercetta le persone giuste, le contatta in modo pertinente e le qualifica prima ancora che arrivino alla prima visita.
 
@@ -48,6 +51,8 @@ Prenditi un minuto e conta quante persone ti hanno scritto negli ultimi due mesi
 Questo è il collo di bottiglia reale. Quasi tutti i software per nutrizionisti si occupano di gestire i pazienti già acquisiti — cartelle cliniche, diari alimentari, prenotazioni. Non affrontano il problema della conversione: trasformare chi ha bussato in qualcuno che prenota la prima visita.
 
 ## Come l'AI cambia le regole per un nutrizionista
+
+Per un nutrizionista l'AI cambia le regole in quattro punti: trova persone già interessate a benessere e alimentazione, scrive un primo messaggio calibrato sul singolo profilo, qualifica le risposte per capire chi è pronto a prenotare e ricontatta chi ha detto "ci penso". Il nutrizionista entra solo nelle conversazioni già calde — il resto lo fa il sistema.
 
 Qui sta il salto. Un nutrizionista lavora spesso da solo o con uno staff minimo: non ha un reparto commerciale che fa prospecting tutto il giorno. È esattamente il punto dove l'intelligenza artificiale vale di più.
 
