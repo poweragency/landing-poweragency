@@ -338,6 +338,8 @@ export const CONTACT = {
 
 export const COMPANY = {
   legalName: "Amore Vincenzo",
+  // Denominazione univoca (standard ecosistema PA, 09/07/2026): SEMPRE questa nelle righe legali/footer.
+  denomination: "Power Agency di Vincenzo Amore",
   tradeName: "Power Agency",
   address: "Via Giuseppe Parini 2, 20019 Settimo Milanese (MI), Italia",
   vat: "12497340963",
@@ -347,7 +349,7 @@ export const COMPANY = {
   email: "info@poweragency.it",
   // Identificazione completa del titolare per le pagine legali
   identifier:
-    "Amore Vincenzo (impresa individuale operante con il nome commerciale «Power Agency»), con sede legale in Via Giuseppe Parini 2, 20019 Settimo Milanese (MI), Italia – P.IVA 12497340963 – C.F. MRAVCN95C27F839R – REA MI-2675736 – PEC poweragency@pec.it",
+    "Power Agency di Vincenzo Amore (impresa individuale), con sede legale in Via Giuseppe Parini 2, 20019 Settimo Milanese (MI), Italia – P.IVA 12497340963 – C.F. MRAVCN95C27F839R – REA MI-2675736 – PEC poweragency@pec.it",
 } as const;
 
 /* ============================================================
