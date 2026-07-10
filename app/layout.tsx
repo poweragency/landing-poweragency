@@ -10,6 +10,7 @@ import { SITE_URL, OG_IMAGE } from "@/lib/seo";
 import { organizationSchema } from "@/lib/structured-data";
 import { GA_ID } from "@/lib/gtag";
 import CookieBanner from "@/components/CookieBanner";
+import AnalyticsLoader from "@/components/AnalyticsLoader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,21 +66,25 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
-        {/* Google Analytics 4 con Consent Mode v2: analytics NEGATO di default,
-            attivato solo dopo consenso esplicito (banner cookie). */}
+        {/* Google Analytics 4 con Consent Mode v2 + blocco preventivo:
+            questo init prepara solo la coda dataLayer (nessuna richiesta a
+            Google); gtag.js viene caricato da <AnalyticsLoader/> SOLO dopo
+            consenso alla categoria "analytics" (banner CMP, lib/consent.ts). */}
         <Script id="ga4-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = gtag;
-var c='denied'; try{ if(localStorage.getItem('pa_cookie_consent')==='granted') c='granted'; }catch(e){}
+var c='denied';
+try{
+  var raw=localStorage.getItem('pa_consent');
+  if(raw){ if(JSON.parse(raw).categories.analytics===true) c='granted'; }
+  else if(localStorage.getItem('pa_cookie_consent')==='granted') c='granted';
+}catch(e){}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c});
 gtag('js', new Date());
 gtag('config', '${GA_ID}');`}
         </Script>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
+        <AnalyticsLoader />
         <JsonLd data={organizationSchema()} />
         <Background />
         <Nav />

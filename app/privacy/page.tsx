@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <LegalShell
       title="Privacy Policy"
-      updated="maggio 2026"
+      updated="10 luglio 2026"
       sections={[
         {
           heading: "1. Titolare del trattamento",
@@ -25,7 +25,8 @@ export default function PrivacyPage() {
           heading: "2. Dati che raccogliamo",
           body: [
             "Raccogliamo i dati che ci fornisci volontariamente tramite il modulo di contatto: nome e cognome, indirizzo email e numero di telefono.",
-            "Raccogliamo inoltre dati tecnici di navigazione strettamente necessari al funzionamento del sito (vedi Cookie Policy).",
+            "Raccogliamo inoltre dati tecnici di navigazione strettamente necessari al funzionamento del sito e, solo previo tuo consenso, dati statistici di navigazione in forma aggregata tramite Google Analytics 4 (vedi Cookie Policy per dettagli, durate e modalità di revoca).",
+            "Quando esprimi una scelta sul banner cookie, registriamo data e ora, versione della cookie policy, categorie accettate o rifiutate e un identificativo tecnico casuale del browser, come prova del consenso (art. 7 GDPR).",
           ],
         },
         {
@@ -50,6 +51,7 @@ export default function PrivacyPage() {
           heading: "6. Comunicazione a terzi",
           body: [
             "I dati possono essere trattati da fornitori che ci supportano nell'erogazione del servizio (es. hosting e strumenti di CRM), nominati responsabili del trattamento. Non vendiamo i tuoi dati a terzi.",
+            "Per le statistiche di navigazione (solo previo consenso) ci avvaliamo di Google Analytics 4, fornito da Google Ireland Ltd.; i dati possono essere trasferiti verso gli Stati Uniti sulla base dell'EU-U.S. Data Privacy Framework, a cui Google è certificata.",
           ],
         },
         {

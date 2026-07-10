@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CONTACT, COMPANY } from "@/lib/content";
 import Logo from "./Logo";
+import CookiePreferencesLink from "./CookiePreferencesLink";
 
 const LEGAL = [
   { label: "Privacy policy", href: "/privacy" },
@@ -89,6 +90,8 @@ export default function Footer() {
                 {l.label}
               </Link>
             ))}
+            {/* Revoca/modifica del consenso in ogni momento (GDPR art. 7.3) */}
+            <CookiePreferencesLink />
           </div>
         </div>
 
