@@ -6,7 +6,8 @@ import CookiePreferencesLink from "./CookiePreferencesLink";
 const LEGAL = [
   { label: "Privacy policy", href: "/privacy" },
   { label: "Cookie policy", href: "/cookie" },
-  { label: "Termini di servizio", href: "/termini" },
+  { label: "Termini e condizioni", href: "/termini" },
+  { label: "DPA", href: "/dpa" },
 ];
 
 // Verticali "palestra sul proprio business": fuori dalla nav (non sono servizi in

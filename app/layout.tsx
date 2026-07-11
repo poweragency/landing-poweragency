@@ -9,6 +9,7 @@ import JsonLd from "@/components/JsonLd";
 import { SITE_URL, OG_IMAGE } from "@/lib/seo";
 import { organizationSchema } from "@/lib/structured-data";
 import { GA_ID } from "@/lib/gtag";
+import { POLICY_VERSION } from "@/lib/consent";
 import CookieBanner from "@/components/CookieBanner";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
 
@@ -77,8 +78,12 @@ window.gtag = gtag;
 var c='denied';
 try{
   var raw=localStorage.getItem('pa_consent');
-  if(raw){ if(JSON.parse(raw).categories.analytics===true) c='granted'; }
-  else if(localStorage.getItem('pa_cookie_consent')==='granted') c='granted';
+  if(raw){
+    var v=JSON.parse(raw);
+    /* consenso valido solo se espresso sulla versione corrente della policy
+       (re-prompt su cambio versione, in sync con lib/consent.ts) */
+    if(v.version==='${POLICY_VERSION}' && v.categories.analytics===true) c='granted';
+  }
 }catch(e){}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c});
 gtag('js', new Date());

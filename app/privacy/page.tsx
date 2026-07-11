@@ -1,6 +1,10 @@
-import LegalShell from "@/components/LegalShell";
-import { CONTACT, COMPANY } from "@/lib/content";
+import LegalHubDoc from "@/components/LegalHubDoc";
+import { fetchLegalDoc } from "@/lib/legal";
 import { pageMeta } from "@/lib/seo";
+
+// Privacy quadro dell'ecosistema: contenuto dall'hub centrale (legal_docs su
+// Power Hub), NON nel repo. Vedi lib/legal.ts. La cookie policy resta
+// per-sito in app/cookie.
 
 export const metadata = pageMeta({
   title: "Privacy Policy",
@@ -8,60 +12,7 @@ export const metadata = pageMeta({
   path: "/privacy",
 });
 
-export default function PrivacyPage() {
-  return (
-    <LegalShell
-      title="Privacy Policy"
-      updated="10 luglio 2026"
-      sections={[
-        {
-          heading: "1. Titolare del trattamento",
-          body: [
-            `Titolare del trattamento dei dati è ${COMPANY.identifier}.`,
-            `Per qualsiasi richiesta relativa ai tuoi dati personali puoi scrivere a ${CONTACT.email}.`,
-          ],
-        },
-        {
-          heading: "2. Dati che raccogliamo",
-          body: [
-            "Raccogliamo i dati che ci fornisci volontariamente tramite il modulo di contatto: nome e cognome, indirizzo email e numero di telefono.",
-            "Raccogliamo inoltre dati tecnici di navigazione strettamente necessari al funzionamento del sito e, solo previo tuo consenso, dati statistici di navigazione in forma aggregata tramite Google Analytics 4 (vedi Cookie Policy per dettagli, durate e modalità di revoca).",
-            "Quando esprimi una scelta sul banner cookie, registriamo data e ora, versione della cookie policy, categorie accettate o rifiutate e un identificativo tecnico casuale del browser, come prova del consenso (art. 7 GDPR).",
-          ],
-        },
-        {
-          heading: "3. Finalità del trattamento",
-          body: [
-            "Utilizziamo i dati esclusivamente per rispondere alle tue richieste, ricontattarti e fornirti informazioni sui nostri servizi.",
-          ],
-        },
-        {
-          heading: "4. Base giuridica",
-          body: [
-            "Il trattamento si fonda sul consenso dell'interessato e sull'esecuzione di misure precontrattuali adottate su tua richiesta.",
-          ],
-        },
-        {
-          heading: "5. Conservazione dei dati",
-          body: [
-            "Conserviamo i dati per il tempo necessario a gestire la tua richiesta e gli adempimenti connessi, e comunque non oltre quanto previsto dalla normativa applicabile.",
-          ],
-        },
-        {
-          heading: "6. Comunicazione a terzi",
-          body: [
-            "I dati possono essere trattati da fornitori che ci supportano nell'erogazione del servizio (es. hosting e strumenti di CRM), nominati responsabili del trattamento. Non vendiamo i tuoi dati a terzi.",
-            "Per le statistiche di navigazione (solo previo consenso) ci avvaliamo di Google Analytics 4, fornito da Google Ireland Ltd.; i dati possono essere trasferiti verso gli Stati Uniti sulla base dell'EU-U.S. Data Privacy Framework, a cui Google è certificata.",
-          ],
-        },
-        {
-          heading: "7. I tuoi diritti",
-          body: [
-            `Puoi esercitare in ogni momento i diritti di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità dei dati, scrivendo a ${CONTACT.email}.`,
-            "Hai inoltre il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali.",
-          ],
-        },
-      ]}
-    />
-  );
+export default async function PrivacyPage() {
+  const doc = await fetchLegalDoc("privacy");
+  return <LegalHubDoc doc={doc} fallbackTitle="Privacy Policy" />;
 }

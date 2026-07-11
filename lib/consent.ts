@@ -56,14 +56,14 @@ function parseStored(raw: string): StoredConsent | null {
   return null;
 }
 
-/** Scelta corrente, o null se l'utente non ha ancora scelto. */
-export function getConsent(): StoredConsent | null {
+/** Lettura grezza: anche consensi di versioni precedenti (per riusare l'id). */
+function readRaw(): StoredConsent | null {
   if (typeof window === "undefined") return null;
   try {
     const raw = localStorage.getItem(CONSENT_STORAGE_KEY);
     if (raw) return parseStored(raw);
 
-    // Migrazione dal vecchio banner: la scelta resta valida, cambia il formato.
+    // Migrazione dal vecchio banner Accetta/Rifiuta (formato pre-CMP).
     const legacy = localStorage.getItem(LEGACY_KEY);
     if (legacy === "granted" || legacy === "denied") {
       const migrated: StoredConsent = {
@@ -80,6 +80,19 @@ export function getConsent(): StoredConsent | null {
     /* storage non disponibile */
   }
   return null;
+}
+
+/**
+ * Scelta corrente VALIDA, o null se l'utente non ha ancora scelto.
+ * Un consenso espresso su una versione precedente della policy NON è più
+ * valido (re-prompt): il banner ricompare e gli script non necessari restano
+ * spenti finché l'utente non sceglie di nuovo. L'id tecnico si conserva
+ * (readRaw) così lo storico nel registro resta collegato allo stesso browser.
+ */
+export function getConsent(): StoredConsent | null {
+  const stored = readRaw();
+  if (!stored) return null;
+  return stored.version === POLICY_VERSION ? stored : null;
 }
 
 /** Cancella best-effort i cookie GA4 quando l'utente revoca gli analitici. */
@@ -100,7 +113,7 @@ function clearAnalyticsCookies() {
  * (AnalyticsLoader) e registra la prova del consenso lato server.
  */
 export function saveConsent(analytics: boolean, action: ConsentAction) {
-  const prev = getConsent();
+  const prev = readRaw();
   const consent: StoredConsent = {
     id: prev?.id ?? crypto.randomUUID(),
     version: POLICY_VERSION,
