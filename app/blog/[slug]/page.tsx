@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import CTA from "@/components/CTA";
+import CtaProdottiDigitali from "@/components/CtaProdottiDigitali";
 import { pageMeta } from "@/lib/seo";
 import { getAllPostsMeta, getPost } from "@/lib/blog";
 import { articleSchema, breadcrumbSchema } from "@/lib/structured-data";
@@ -72,6 +73,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </h1>
 
           <div className="prose-pa mt-10" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <CtaProdottiDigitali />
         </div>
       </article>
 
