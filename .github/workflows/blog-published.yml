@@ -1,0 +1,55 @@
+name: Avviso articolo pubblicato
+
+# Email (Resend) quando un NUOVO articolo blog va live su main (auto-merge della
+# routine o merge umano). Chiude il buco: prima la pubblicazione RIUSCITA era muta
+# (pr-alert.yml avvisa solo quando un articolo viene BOCCIATO -> [DA RIVEDERE]).
+# --diff-filter=A: solo file AGGIUNTI, cosi' la modifica di un articolo esistente
+# (es. fix on-page) NON genera un avviso.
+# Secret richiesto: RESEND_API_KEY (stessa chiave del report PowerSEO).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/blog/**"
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Email se ci sono articoli NUOVI
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          set -euo pipefail
+          ADDED=$(git diff --diff-filter=A --name-only HEAD~1 HEAD -- 'content/blog/*.md' || true)
+          if [ -z "$ADDED" ]; then
+            echo "Nessun articolo nuovo (solo modifiche): niente email."
+            exit 0
+          fi
+          ITEMS=""
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            SLUG=$(basename "$f" .md)
+            TITLE=$(sed -n 's/^title:[[:space:]]*"\{0,1\}\(.*\)/\1/p' "$f" | head -1 | sed 's/"[[:space:]]*$//')
+            [ -z "$TITLE" ] && TITLE="$SLUG"
+            URL="https://www.poweragency.it/blog/$SLUG"
+            ITEMS="$ITEMS<p>📄 <a href=\"$URL\">$TITLE</a><br><span style=\"color:#888\">$URL</span></p>"
+          done <<< "$ADDED"
+          jq -n --arg items "$ITEMS" '
+            {
+              from: "PowerSEO <seo@poweragency.it>",
+              to: ["admin@poweragency.it"],
+              subject: "Articolo pubblicato su poweragency.it",
+              html: ("<p>Un nuovo articolo e' andato LIVE (scelto dal motore di opportunita' PowerSEO, previsione gia' registrata):</p>" + $items + "<p style=\"color:#888;font-size:13px\">L'hit-rate e la calibrazione (previsto vs reale) arrivano nel report SEO quindicinale.</p>")
+            }' \
+          | curl -sf -X POST https://api.resend.com/emails \
+              -H "Authorization: Bearer $RESEND_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d @-
