@@ -1,32 +1,34 @@
-import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import Manifesto from "@/components/Manifesto";
-import Team from "@/components/Team";
-import CTA from "@/components/CTA";
-import Faq from "@/components/Faq";
+import { Newsreader, JetBrains_Mono } from "next/font/google";
 import JsonLd from "@/components/JsonLd";
 import { websiteSchema, faqSchema } from "@/lib/structured-data";
-import { HOME_FAQ } from "@/lib/content";
+import { FAQ } from "@/components/home/data";
+import HomeClient from "@/components/home/HomeClient";
+import { HOME_HTML } from "@/components/home/markup";
+import "@/components/home/home.css";
+
+const serif = Newsreader({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-pa-serif",
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pa-mono",
+  display: "swap",
+});
 
 export default function Home() {
   return (
-    <main id="top">
-      <JsonLd data={[websiteSchema(), faqSchema(HOME_FAQ)]} />
-      <Hero />
-      <Stats />
-      <Manifesto />
-      <Team />
-      <Faq
-        id="faq"
-        title={<>Domande frequenti</>}
-        items={HOME_FAQ}
-        related={[
-          { label: "Agenzia di lead generation", href: "/agenzia-lead-generation" },
-          { label: "Gestionali e CRM verticali", href: "/crm" },
-          { label: "I nostri software", href: "/software" },
-        ]}
+    <>
+      <JsonLd data={[websiteSchema(), faqSchema(FAQ.map(([q, a]) => ({ q, a })))]} />
+      <div
+        className={`pa-home ${serif.variable} ${mono.variable}`}
+        dangerouslySetInnerHTML={{ __html: HOME_HTML }}
       />
-      <CTA />
-    </main>
+      <HomeClient />
+    </>
   );
 }
